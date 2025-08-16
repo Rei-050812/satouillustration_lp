@@ -1,0 +1,203 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="さとうゆうへのお問い合わせフォーム。イラスト制作に関するご質問やご相談がございましたら、お気軽にお問い合わせください。">
+    <title>お問い合わせ - さとうゆうillustration</title>
+    <link rel="canonical" href="https://satouillustration.com/contact/">
+    
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- OGP -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="お問い合わせ - さとうゆうillustration">
+    <meta property="og:description" content="イラスト制作に関するご質問やご相談がございましたら、お気軽にお問い合わせください。">
+    <meta property="og:url" content="https://satouillustration.com/contact/">
+    <meta property="og:image" content="https://satouillustration.com/images/ogp-contact.jpg">
+    <meta property="og:site_name" content="さとうゆうillustration">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="お問い合わせ - さとうゆうillustration">
+    <meta name="twitter:description" content="イラスト制作に関するご質問やご相談がございましたら、お気軽にお問い合わせください。">
+    <meta name="twitter:image" content="https://satouillustration.com/images/ogp-contact.jpg">
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "ContactPage",
+        "name": "お問い合わせ",
+        "description": "さとうゆうillustrationへのお問い合わせページ",
+        "url": "https://satouillustration.com/contact/"
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <h1 class="header__logo">
+                    <a href="../index.html" class="header__logo-link">さとうゆうillustration</a>
+                </h1>
+                
+                <!-- Desktop Navigation -->
+                <nav class="header__nav" aria-label="メインナビゲーション">
+                    <ul class="header__nav-list">
+                        <li><a href="../index.html" class="header__nav-link">トップ</a></li>
+                        <li><a href="../works/index.html" class="header__nav-link">実績一覧</a></li>
+                        <li><a href="../order/index.html" class="header__nav-link">制作依頼</a></li>
+                        <li><a href="index.html" class="header__nav-link" aria-current="page">お問い合わせ</a></li>
+                        <li><a href="../links/index.html" class="header__nav-link">SNS</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Mobile Hamburger Menu -->
+                <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer">
+                    <span class="hamburger__line"></span>
+                    <span class="hamburger__line"></span>
+                    <span class="hamburger__line"></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Drawer -->
+        <nav class="drawer" id="drawer" aria-label="モバイルメニュー">
+            <div class="drawer__overlay"></div>
+            <div class="drawer__content">
+                <div class="drawer__header">
+                    <h2 class="drawer__title">メニュー</h2>
+                    <button class="drawer__close" aria-label="メニューを閉じる">
+                        <span class="sr-only">閉じる</span>
+                        ×
+                    </button>
+                </div>
+                <ul class="drawer__nav-list">
+                    <li><a href="../index.html" class="drawer__nav-link">トップ</a></li>
+                    <li><a href="../works/index.html" class="drawer__nav-link">実績一覧</a></li>
+                    <li><a href="../order/index.html" class="drawer__nav-link">制作依頼</a></li>
+                    <li><a href="index.html" class="drawer__nav-link" aria-current="page">お問い合わせ</a></li>
+                    <li><a href="../links/index.html" class="drawer__nav-link">SNS</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Contact Header -->
+        <section class="contact-header">
+            <div class="container">
+                <h1 class="section__title section__title--large">お問い合わせ</h1>
+                <p class="section__description" style="text-align: center;">
+                    ご質問やご相談がございましたら、<br>
+                    お気軽にお問い合わせください。
+                </p>
+            </div>
+        </section>
+
+        <!-- Contact Form -->
+        <section class="contact-form">
+            <div class="container">
+                <form class="form" data-validate method="post" action="/contact/submit">
+                    <!-- Basic Information -->
+                    <fieldset class="form-fieldset">
+                        <legend class="form-legend">基本情報</legend>
+                        
+                        <div class="form-group">
+                            <label for="name" class="form-label form-label--required">お名前</label>
+                            <input type="text" id="name" name="name" class="form-input" required autocomplete="name">
+                            <div class="form-error" role="alert"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="email" class="form-label form-label--required">メールアドレス</label>
+                            <input type="email" id="email" name="email" class="form-input" required 
+                                   autocomplete="email" inputmode="email" autocapitalize="off" autocorrect="off">
+                            <div class="form-error" role="alert"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="phone" class="form-label">電話番号</label>
+                            <input type="tel" id="phone" name="phone" class="form-input" 
+                                   autocomplete="tel" inputmode="tel">
+                            <div class="form-error" role="alert"></div>
+                        </div>
+                    </fieldset>
+
+                    <!-- Inquiry Information -->
+                    <fieldset class="form-fieldset">
+                        <legend class="form-legend">お問い合わせ内容</legend>
+                        
+                        <div class="form-group">
+                            <label for="inquiry-type" class="form-label form-label--required">お問い合わせ種別</label>
+                            <select id="inquiry-type" name="inquiry-type" class="form-select" required>
+                                <option value="">選択してください</option>
+                                <option value="general">一般的なご質問</option>
+                                <option value="quote">お見積もりについて</option>
+                                <option value="process">制作プロセスについて</option>
+                                <option value="schedule">スケジュールについて</option>
+                                <option value="portfolio">実績・ポートフォリオについて</option>
+                                <option value="other">その他</option>
+                            </select>
+                            <div class="form-error" role="alert"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="subject" class="form-label form-label--required">件名</label>
+                            <input type="text" id="subject" name="subject" class="form-input" required>
+                            <div class="form-error" role="alert"></div>
+                        </div>
+
+                        <div class="form-group">
+                            <label for="message" class="form-label form-label--required">お問い合わせ内容</label>
+                            <textarea id="message" name="message" class="form-textarea" 
+                                      required placeholder="お問い合わせ内容を詳しくお聞かせください。"></textarea>
+                            <div class="form-error" role="alert"></div>
+                        </div>
+                    </fieldset>
+
+                    <div class="form-submit">
+                        <button type="submit" class="btn btn--primary">送信する</button>
+                    </div>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <h3 class="footer__title">さとうゆうillustration</h3>
+                    <p class="footer__description">手描きの温かみのあるイラストを制作いたします。</p>
+                </div>
+                
+                <nav class="footer__nav" aria-label="フッターナビゲーション">
+                    <ul class="footer__nav-list">
+                        <li><a href="../index.html" class="footer__nav-link">トップ</a></li>
+                        <li><a href="../works/index.html" class="footer__nav-link">実績一覧</a></li>
+                        <li><a href="../order/index.html" class="footer__nav-link">制作依頼</a></li>
+                        <li><a href="index.html" class="footer__nav-link">お問い合わせ</a></li>
+                        <li><a href="../links/index.html" class="footer__nav-link">SNS</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2024 さとうゆうillustration. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/form-validation.js"></script>
+</body>
+</html>
