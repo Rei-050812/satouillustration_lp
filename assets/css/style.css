@@ -1208,6 +1208,104 @@ a:focus {
   background: var(--bg);
 }
 
+/* ===== Thanks Page Specific ===== */
+.thanks-content {
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.thanks-message {
+  background: var(--white);
+  border-radius: var(--radius);
+  padding: 3rem 2rem;
+  box-shadow: var(--shadow-light);
+}
+
+.thanks-title {
+  font-size: 1.75rem;
+  color: var(--acc);
+  margin-bottom: 1.5rem;
+  font-weight: 700;
+}
+
+.thanks-description {
+  font-size: 1rem;
+  line-height: 1.7;
+  color: var(--ink);
+  margin-bottom: 1.5rem;
+}
+
+.thanks-note {
+  background: var(--gray-light);
+  border-radius: var(--radius);
+  padding: 2rem;
+  margin: 2rem 0;
+  text-align: left;
+}
+
+.thanks-note-title {
+  font-size: 1.25rem;
+  color: var(--ink);
+  margin-bottom: 1rem;
+  font-weight: 700;
+}
+
+.thanks-note-list {
+  margin: 0;
+  padding-left: 1.5rem;
+  list-style-type: disc;
+}
+
+.thanks-note-list li {
+  margin-bottom: 0.5rem;
+  line-height: 1.6;
+  color: var(--ink);
+}
+
+.thanks-process-list {
+  margin: 0;
+  padding-left: 1.5rem;
+  counter-reset: process-counter;
+}
+
+.thanks-process-list li {
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  color: var(--ink);
+  position: relative;
+  counter-increment: process-counter;
+}
+
+.thanks-process-list li::marker {
+  font-weight: 700;
+  color: var(--acc);
+}
+
+.thanks-actions {
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  margin-top: 2rem;
+  flex-wrap: wrap;
+}
+
+@media (max-width: 600px) {
+  .thanks-message {
+    padding: 2rem 1.5rem;
+  }
+  
+  .thanks-actions {
+    flex-direction: column;
+    align-items: center;
+  }
+  
+  .thanks-actions .btn {
+    width: 100%;
+    max-width: 280px;
+  }
+}
+
 /* ===== Links/SNS Page Specific ===== */
 .links-header {
   padding: 6rem 0 2rem;
