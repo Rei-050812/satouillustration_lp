@@ -1,0 +1,199 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="description" content="さとうゆうのイラスト作品gallery。あたたかみのある手描きイラスト作品を色別にフィルタリングしてご覧いただけます。">
+    <title>gallery - さとうゆうillustration</title>
+    <link rel="icon" type="image/png" href="../images/favicon/favicon-satouillustration.png">
+    <link rel="canonical" href="https://satouillustration.com/works/">
+    
+    <!-- Preconnect for Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- OGP -->
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="gallery - さとうゆうillustration">
+    <meta property="og:description" content="あたたかみのある手描きイラスト作品を色別にフィルタリングしてご覧いただけます。">
+    <meta property="og:url" content="https://satouillustration.com/works/">
+    <meta property="og:image" content="https://satouillustration.com/images/ogp/ogp-satouillustration.jpg">
+    <meta property="og:site_name" content="さとうゆうillustration">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="gallery - さとうゆうillustration">
+    <meta name="twitter:description" content="あたたかみのある手描きイラスト作品を色別にフィルタリングしてご覧いただけます。">
+    <meta name="twitter:image" content="https://satouillustration.com/images/ogp/ogp-satouillustration.jpg">
+    
+    <link rel="stylesheet" href="../assets/css/style.css">
+    
+    <!-- Structured Data -->
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "BreadcrumbList",
+        "itemListElement": [
+            {
+                "@type": "ListItem",
+                "position": 1,
+                "name": "トップ",
+                "item": "https://satouillustration.com/"
+            },
+            {
+                "@type": "ListItem",
+                "position": 2,
+                "name": "gallery",
+                "item": "https://satouillustration.com/works/"
+            }
+        ]
+    }
+    </script>
+</head>
+<body>
+    <!-- Header -->
+    <header class="header">
+        <div class="container">
+            <div class="header__content">
+                <h1 class="header__logo">
+                    <a href="../index.html" class="header__logo-link">さとうゆうillustration</a>
+                </h1>
+                
+                <!-- Desktop Navigation -->
+                <nav class="header__nav" aria-label="メインナビゲーション">
+                    <ul class="header__nav-list">
+                        <li><a href="../index.html" class="header__nav-link">トップ</a></li>
+                        <li><a href="index.html" class="header__nav-link" aria-current="page">gallery</a></li>
+                        <li><a href="../order/index.html" class="header__nav-link">ご依頼</a></li>
+                        <li><a href="../contact/index.html" class="header__nav-link">お問い合わせ</a></li>
+                        <li><a href="../links/index.html" class="header__nav-link">SNS</a></li>
+                    </ul>
+                </nav>
+                
+                <!-- Mobile Hamburger Menu -->
+                <button class="hamburger" aria-label="メニューを開く" aria-expanded="false" aria-controls="drawer">
+                    <span class="hamburger__line"></span>
+                    <span class="hamburger__line"></span>
+                    <span class="hamburger__line"></span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Drawer -->
+        <nav class="drawer" id="drawer" aria-label="モバイルメニュー">
+            <div class="drawer__overlay"></div>
+            <div class="drawer__content">
+                <div class="drawer__header">
+                    <h2 class="drawer__title">メニュー</h2>
+                    <button class="drawer__close" aria-label="メニューを閉じる">
+                        <span class="sr-only">閉じる</span>
+                        ×
+                    </button>
+                </div>
+                <ul class="drawer__nav-list">
+                    <li><a href="../index.html" class="drawer__nav-link">トップ</a></li>
+                    <li><a href="index.html" class="drawer__nav-link" aria-current="page">gallery</a></li>
+                    <li><a href="../order/index.html" class="drawer__nav-link">ご依頼</a></li>
+                    <li><a href="../contact/index.html" class="drawer__nav-link">お問い合わせ</a></li>
+                    <li><a href="../links/index.html" class="drawer__nav-link">SNS</a></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+
+    <main>
+        <!-- Works Header -->
+        <section class="works-header">
+            <div class="container">
+                <h1 class="section__title section__title--large">gallery</h1>
+                <p class="section__description" style="text-align: center;">
+                    これまでに制作したイラストをご紹介します。色別にフィルタリングしてご覧いただけます。
+                </p>
+                
+                <!-- Filter Tabs -->
+                <div class="filter-tabs">
+                    <button class="filter-tab active" data-filter="all">すべて</button>
+                    <button class="filter-tab" data-filter="monochrome">モノクロ</button>
+                    <button class="filter-tab" data-filter="color">カラー</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- Works Grid -->
+        <section class="works-grid-section">
+            <div class="container">
+                <div class="grid--works">
+                    <!-- Work Item 1 -->
+                    <article id="work-1" class="work-card" data-genre="monochrome">
+                        <div class="work-card__link">
+                            <img src="../images/works/work-01-thumb.jpg" alt="檸檬さま 1st Album 再訪の街 透明な約束 特典巾着イラスト" 
+                                 class="work-card__image" width="360" height="270" loading="lazy" decoding="async">
+                            <div class="work-card__content">
+                                <h2 class="work-card__title">檸檬さま 1st Album 再訪の街 透明な約束 特典巾着イラスト（2025）</h2>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Work Item 2 -->
+                    <article id="work-2" class="work-card" data-genre="monochrome">
+                        <div class="work-card__link">
+                            <img src="../images/works/work-02-thumb.jpg" alt="左藤吹きガラス工房 メッセージカード用イラスト" 
+                                 class="work-card__image" width="360" height="270" loading="lazy" decoding="async">
+                            <div class="work-card__content">
+                                <h2 class="work-card__title">左藤吹きガラス工房 メッセージカード用イラスト（2023）</h2>
+                            </div>
+                        </div>
+                    </article>
+
+                    <!-- Work Item 3 -->
+                    <article id="work-3" class="work-card" data-genre="color">
+                        <div class="work-card__link">
+                            <img src="../images/works/work-03-thumb.jpg" alt="Hanako Web連載『Noyauのムーンレター〜月とアロマのご自愛レスキュー〜』アイキャッチ用イラスト" 
+                                 class="work-card__image" width="360" height="270" loading="lazy" decoding="async">
+                            <div class="work-card__content">
+                                <h2 class="work-card__title">Hanako Web連載『Noyauのムーンレター〜月とアロマのご自愛レスキュー〜』アイキャッチ用イラスト（2023）</h2>
+                            </div>
+                        </div>
+                    </article>
+
+                <!-- Pagination -->
+                <div class="pagination">
+                    <p class="pagination__info">
+                        <span class="pagination__current">1</span> / 1 ページ（全 3 件）
+                    </p>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer__content">
+                <div class="footer__brand">
+                    <h3 class="footer__title">さとうゆうillustration</h3>
+                    <p class="footer__description">あたたかみのある手描きイラスト</p>
+                </div>
+                
+                <nav class="footer__nav" aria-label="フッターナビゲーション">
+                    <ul class="footer__nav-list">
+                        <li><a href="../index.html" class="footer__nav-link">トップ</a></li>
+                        <li><a href="index.html" class="footer__nav-link">gallery</a></li>
+                        <li><a href="../order/index.html" class="footer__nav-link">ご依頼</a></li>
+                        <li><a href="../contact/index.html" class="footer__nav-link">お問い合わせ</a></li>
+                        <li><a href="../links/index.html" class="footer__nav-link">SNS</a></li>
+                    </ul>
+                </nav>
+            </div>
+            
+            <div class="footer__bottom">
+                <p class="footer__copyright">&copy; 2025 さとうゆうillustration. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="../assets/js/main.js"></script>
+    <script src="../assets/js/works.js"></script>
+</body>
+</html>
