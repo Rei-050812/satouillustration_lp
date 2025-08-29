@@ -106,7 +106,7 @@
         <!-- Contact Form -->
         <section class="contact-form">
             <div class="container">
-                <form class="form" data-validate method="post" action="send.php">
+                <form class="form" method="post" action="https://mysterynotes.sakura.ne.jp/satouillustration/contact/send.php">
                     <!-- Basic Information -->
                     <fieldset class="form-fieldset">
                         <legend class="form-legend">基本情報</legend>
@@ -164,6 +164,9 @@
                         </div>
                     </fieldset>
 
+                    <!-- Honeypot for spam prevention -->
+                    <input type="text" name="company" class="hp" autocomplete="off" tabindex="-1" aria-hidden="true" style="display:none;">
+                    
                     <div class="form-submit">
                         <button type="submit" class="btn btn--primary">送信する</button>
                     </div>
@@ -199,6 +202,5 @@
     </footer>
 
     <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/form-validation.js"></script>
 </body>
 </html>

@@ -1,46 +1,72 @@
 <?php
-// 文字エンコーディングを設定
+// 出力バッファリング開始（必須）
+ob_start();
+
+// エラー報告設定
+error_reporting(E_ALL);
+ini_set('display_errors', 0);
+
+// ログ関数（エラー耐性）
+function writeLog($message) {
+    $timestamp = date('Y-m-d H:i:s');
+    $logMessage = "[$timestamp] $message\n";
+    
+    // 複数の方法でログ記録を試行
+    try {
+        $logFile = __DIR__ . '/debug.log';
+        @file_put_contents($logFile, $logMessage, FILE_APPEND | LOCK_EX);
+    } catch (Exception $e) {
+        // ファイル書き込み失敗時はPHPエラーログに記録
+    }
+    
+    // PHPエラーログにも記録
+    @error_log("ORDER_FORM: $message");
+}
+
+writeLog("制作依頼フォーム処理開始");
+
+// 日本語メール設定
+mb_language("Japanese");
 mb_internal_encoding("UTF-8");
 
-// POSTデータの取得と検証
-if ($_SERVER["REQUEST_METHOD"] !== "POST") {
-    header("Location: ../index.html");
-    exit();
+// POST検証
+if ($_SERVER['REQUEST_METHOD'] !== 'POST') {
+    writeLog("非POSTリクエスト: " . ($_SERVER['REQUEST_METHOD'] ?? 'UNKNOWN'));
+    ob_end_clean();
+    header('Location: index.html');
+    exit;
 }
 
-// 基本情報
-$name = isset($_POST['name']) ? trim($_POST['name']) : '';
+// データ取得とサニタイズ
+$name = isset($_POST['name']) ? trim(htmlspecialchars($_POST['name'], ENT_QUOTES, 'UTF-8')) : '';
 $email = isset($_POST['email']) ? trim($_POST['email']) : '';
-$phone = isset($_POST['phone']) ? trim($_POST['phone']) : '';
-
-// 制作内容
+$phone = isset($_POST['phone']) ? trim(htmlspecialchars($_POST['phone'], ENT_QUOTES, 'UTF-8')) : '';
 $project_type = isset($_POST['project-type']) ? $_POST['project-type'] : '';
-$project_title = isset($_POST['project-title']) ? trim($_POST['project-title']) : '';
-$project_description = isset($_POST['project-description']) ? trim($_POST['project-description']) : '';
-$budget = isset($_POST['budget']) ? $_POST['budget'] : '';
-$deadline = isset($_POST['deadline']) ? trim($_POST['deadline']) : '';
-$additional_info = isset($_POST['additional-info']) ? trim($_POST['additional-info']) : '';
+$project_title = isset($_POST['project-title']) ? trim(htmlspecialchars($_POST['project-title'], ENT_QUOTES, 'UTF-8')) : '';
+$project_description = isset($_POST['project-description']) ? trim(htmlspecialchars($_POST['project-description'], ENT_QUOTES, 'UTF-8')) : '';
+$budget = isset($_POST['budget']) ? trim($_POST['budget']) : '';
+$deadline = isset($_POST['deadline']) ? trim(htmlspecialchars($_POST['deadline'], ENT_QUOTES, 'UTF-8')) : '';
+$additional_info = isset($_POST['additional-info']) ? trim(htmlspecialchars($_POST['additional-info'], ENT_QUOTES, 'UTF-8')) : '';
+
+writeLog("データ取得: name=[$name] email=[$email] type=[$project_type]");
 
 // 必須項目チェック
-$errors = [];
-if (empty($name)) $errors[] = "お名前";
-if (empty($email)) $errors[] = "メールアドレス";
-if (empty($project_type)) $errors[] = "制作種別";
-if (empty($project_title)) $errors[] = "プロジェクト名・タイトル";
-if (empty($project_description)) $errors[] = "制作内容の詳細";
-
-if (!empty($errors)) {
-    header("Location: index.html?error=" . urlencode("以下の項目が入力されていません: " . implode(", ", $errors)));
-    exit();
+if (empty($name) || empty($email) || empty($project_type) || empty($project_title) || empty($project_description)) {
+    writeLog("必須項目エラー");
+    ob_end_clean();
+    header('Location: index.html');
+    exit;
 }
 
-// メールアドレスの形式チェック
+// メールアドレス検証
 if (!filter_var($email, FILTER_VALIDATE_EMAIL)) {
-    header("Location: index.html?error=" . urlencode("メールアドレスの形式が正しくありません"));
-    exit();
+    writeLog("メール形式エラー: $email");
+    ob_end_clean();
+    header('Location: index.html');
+    exit;
 }
 
-// 制作種別の変換
+// 制作種別変換
 $project_types = [
     'icon' => 'アイコン・ロゴ',
     'cd' => 'CD付録・ジャケット',
@@ -51,104 +77,156 @@ $project_types = [
 ];
 $project_type_text = isset($project_types[$project_type]) ? $project_types[$project_type] : $project_type;
 
-// 予算の変換
+// 予算選択肢変換
 $budget_options = [
-    'under-50k' => '5万円未満',
-    '50k-100k' => '5万円〜10万円',
-    '100k-200k' => '10万円〜20万円',
-    'over-200k' => '20万円以上',
-    'discuss' => '相談したい'
+    'under-30000' => '3万円未満',
+    '30000-50000' => '3万円〜5万円',
+    '50000-100000' => '5万円〜10万円',
+    '100000-200000' => '10万円〜20万円',
+    'over-200000' => '20万円以上',
+    'consultation' => '要相談'
 ];
-$budget_text = isset($budget_options[$budget]) ? $budget_options[$budget] : $budget;
 
-// 受信メール設定
-$to = "r-numanou@zero-venture.com";
-$mail_subject = "【さとうゆうillustration】制作依頼: " . $project_title;
+// デバッグログ追加
+writeLog("予算デバッグ: 受信した予算値 = '$budget'");
+writeLog("予算デバッグ: 空かどうか = " . (empty($budget) ? 'true' : 'false'));
 
-// 受信メール本文
-$mail_body = "さとうゆうillustrationのウェブサイトから制作依頼がありました。\n\n";
-$mail_body .= "■お名前\n" . $name . "\n\n";
-$mail_body .= "■メールアドレス\n" . $email . "\n\n";
-if (!empty($phone)) {
-    $mail_body .= "■電話番号\n" . $phone . "\n\n";
+if (empty($budget)) {
+    $budget_text = '';
+    writeLog("予算デバッグ: 予算が空のため、budget_textを空に設定");
+} else {
+    $budget_text = isset($budget_options[$budget]) ? $budget_options[$budget] : $budget;
+    writeLog("予算デバッグ: 変換後のbudget_text = '$budget_text'");
 }
-$mail_body .= "■制作種別\n" . $project_type_text . "\n\n";
-$mail_body .= "■プロジェクト名・タイトル\n" . $project_title . "\n\n";
-$mail_body .= "■制作内容の詳細\n" . $project_description . "\n\n";
-if (!empty($budget)) {
-    $mail_body .= "■予算\n" . $budget_text . "\n\n";
+
+// 管理者宛メール本文
+$admin_to = 'susukishima0836@gmail.com';
+$admin_subject = '【制作依頼】さとうゆうillustration';
+$admin_body = "制作依頼がありました。\n\n";
+$admin_body .= "■ お名前\n$name\n\n";
+$admin_body .= "■ メールアドレス\n$email\n\n";
+if (!empty($phone)) {
+    $admin_body .= "■ お電話番号\n$phone\n\n";
+}
+$admin_body .= "■ 制作種別\n$project_type_text\n\n";
+$admin_body .= "■ プロジェクト名\n$project_title\n\n";
+$admin_body .= "■ 制作内容\n$project_description\n\n";
+if (!empty($budget_text)) {
+    $admin_body .= "■ ご予算\n$budget_text\n\n";
 }
 if (!empty($deadline)) {
-    $mail_body .= "■希望納期\n" . $deadline . "\n\n";
+    $admin_body .= "■ ご希望納期\n$deadline\n\n";
 }
 if (!empty($additional_info)) {
-    $mail_body .= "■その他・補足事項\n" . $additional_info . "\n\n";
+    $admin_body .= "■ その他・補足\n$additional_info\n\n";
 }
-$mail_body .= "■送信日時\n" . date("Y年m月d日 H:i:s") . "\n\n";
-$mail_body .= "このメールは自動送信されています。";
+$admin_body .= "■ 送信日時\n" . date('Y年n月j日 H時i分') . "\n";
 
-// 受信メールヘッダー
-$headers = "From: noreply@satouillustration.com\r\n";
-$headers .= "Reply-To: " . $email . "\r\n";
-$headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-
-// 自動返信メール設定
-$auto_reply_subject = "【さとうゆうillustration】制作依頼ありがとうございます";
-$auto_reply_body = $name . " 様\n\n";
-$auto_reply_body .= "この度は、さとうゆうillustrationに制作依頼をいただき、誠にありがとうございます。\n\n";
-$auto_reply_body .= "以下の内容で制作依頼を受け付けいたしました。\n";
-$auto_reply_body .= "内容を確認の上、3営業日以内にお見積もりをご連絡いたします。\n\n";
-$auto_reply_body .= "【制作依頼内容】\n";
-$auto_reply_body .= "お名前: " . $name . "\n";
-$auto_reply_body .= "メールアドレス: " . $email . "\n";
-if (!empty($phone)) {
-    $auto_reply_body .= "電話番号: " . $phone . "\n";
-}
-$auto_reply_body .= "制作種別: " . $project_type_text . "\n";
-$auto_reply_body .= "プロジェクト名: " . $project_title . "\n";
-$auto_reply_body .= "制作内容: " . $project_description . "\n";
-if (!empty($budget)) {
-    $auto_reply_body .= "予算: " . $budget_text . "\n";
-}
-if (!empty($deadline)) {
-    $auto_reply_body .= "希望納期: " . $deadline . "\n";
-}
-if (!empty($additional_info)) {
-    $auto_reply_body .= "その他: " . $additional_info . "\n";
-}
-$auto_reply_body .= "\n※このメールは自動送信されています。\n";
-$auto_reply_body .= "※ご返信いただいても対応できませんので、ご了承ください。\n\n";
-$auto_reply_body .= "─────────────────────\n";
-$auto_reply_body .= "さとうゆうillustration\n";
-$auto_reply_body .= "E-mail: r-numanou@zero-venture.com\n";
-$auto_reply_body .= "Website: https://satouillustration.com\n";
-$auto_reply_body .= "─────────────────────";
-
-// 自動返信メールヘッダー
-$auto_reply_headers = "From: noreply@satouillustration.com\r\n";
-$auto_reply_headers .= "Content-Type: text/plain; charset=UTF-8\r\n";
-
-// メール送信
-$mail_sent = false;
-$auto_reply_sent = false;
-
-try {
-    // 受信メール送信
-    $mail_sent = mb_send_mail($to, $mail_subject, $mail_body, $headers);
-    
-    // 自動返信メール送信
-    $auto_reply_sent = mb_send_mail($email, $auto_reply_subject, $auto_reply_body, $auto_reply_headers);
-    
-    if ($mail_sent && $auto_reply_sent) {
-        // 成功時はサンクスページにリダイレクト
-        header("Location: thanks.html");
-        exit();
-    } else {
-        throw new Exception("メール送信に失敗しました");
+// セキュリティチェック
+// ヘッダインジェクション簡易対策
+foreach ([$name, $subject, $email] as $v) {
+    if (preg_match('/\r|\n/', $v)) {
+        writeLog('header injection suspected');
+        if (ob_get_length()) { ob_end_clean(); }
+        header('Location: index.html'); 
+        exit;
     }
-} catch (Exception $e) {
-    // エラー時は元のページにリダイレクト
-    header("Location: index.html?error=" . urlencode("メール送信に失敗しました。しばらく時間をおいて再度お試しください。"));
-    exit();
 }
+
+// ハニーポット（空であるべき）
+$hp = isset($_POST['company']) ? trim($_POST['company']) : '';
+if ($hp !== '') {
+    writeLog('honeypot triggered');
+    if (ob_get_length()) { ob_end_clean(); }
+    header('Location: index.html'); 
+    exit;
+}
+
+// メールヘッダー（管理者宛）
+$admin_headers = [
+    'From: noreply@mysterynotes.sakura.ne.jp',
+    'Reply-To: ' . $email,
+    'MIME-Version: 1.0',
+    'Content-Type: text/plain; charset=UTF-8',
+    'Content-Transfer-Encoding: 8bit',
+    'X-Mailer: PHP/' . phpversion()
+];
+
+writeLog("管理者メール送信開始");
+
+// 管理者宛メール送信
+writeLog("管理者メール詳細: To=$admin_to, Subject=$admin_subject");
+writeLog("管理者メールヘッダー: " . implode(" | ", $admin_headers));
+
+$admin_sent = mail(
+    $admin_to,
+    mb_encode_mimeheader($admin_subject, 'UTF-8'),
+    $admin_body,
+    implode("\r\n", $admin_headers),
+    '-f noreply@mysterynotes.sakura.ne.jp'
+);
+
+if(!$admin_sent){ 
+    writeLog('管理者メール送信失敗: '.print_r(error_get_last(), true)); 
+    // 追加のエラー情報
+    writeLog('mail関数戻り値: ' . ($admin_sent ? 'true' : 'false'));
+    writeLog('sendmail設定: ' . ini_get('sendmail_path'));
+}
+
+writeLog("管理者メール結果: " . ($admin_sent ? '成功' : '失敗'));
+
+// 自動返信メール
+$user_subject = '[自動返信] 制作依頼を受付いたしました';
+$user_body = "$name 様\n\n";
+$user_body .= "この度は、さとうゆうillustrationに制作依頼をいただき、誠にありがとうございます。\n\n";
+$user_body .= "以下の内容で制作依頼を受付いたしました。\n";
+$user_body .= "3営業日以内にお見積もりをご連絡させていただきます。\n\n";
+$user_body .= "【受付内容】\n";
+$user_body .= "プロジェクト名: $project_title\n";
+$user_body .= "制作種別: $project_type_text\n";
+if (!empty($budget_text)) {
+    $user_body .= "ご予算: $budget_text\n";
+}
+if (!empty($deadline)) {
+    $user_body .= "ご希望納期: $deadline\n";
+}
+$user_body .= "\n─────────────────\n";
+$user_body .= "さとうゆうillustration\n";
+$user_body .= "Email: r-numanou@zero-venture.com\n";
+
+$user_headers = [
+    'From: noreply@mysterynotes.sakura.ne.jp',
+    'MIME-Version: 1.0',
+    'Content-Type: text/plain; charset=UTF-8',
+    'Content-Transfer-Encoding: 8bit',
+    'X-Mailer: PHP/' . phpversion()
+];
+
+writeLog("自動返信メール送信開始");
+
+// 自動返信メール送信
+$user_sent = mail(
+    $email,
+    mb_encode_mimeheader($user_subject, 'UTF-8'),
+    $user_body,
+    implode("\r\n", $user_headers),
+    '-f noreply@mysterynotes.sakura.ne.jp'
+);
+if(!$user_sent){ writeLog('user mail failed: '.print_r(error_get_last(), true)); }
+
+writeLog("自動返信メール結果: " . ($user_sent ? '成功' : '失敗'));
+
+// 送信結果をログに記録
+if ($admin_sent && $user_sent) {
+    writeLog("全メール送信成功 - サンクスページへリダイレクト");
+} else if ($admin_sent) {
+    writeLog("管理者メールのみ成功 - サンクスページへリダイレクト");
+} else {
+    writeLog("メール送信失敗 - サンクスページへリダイレクト");
+}
+
+// 出力バッファをクリアして、サンクスページへリダイレクト
+if (ob_get_length()) { ob_end_clean(); }
+header('Location: /satouillustration/order/thanks.html');
+exit;
 ?>
