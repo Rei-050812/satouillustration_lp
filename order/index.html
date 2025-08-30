@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
     <meta name="description" content="さとうゆうへのイラスト制作依頼フォーム。アイコン、CD付録、看板など、あなたのプロジェクトに最適な手描きイラストを制作いたします。">
     <title>制作依頼フォーム - さとうゆうillustration</title>
+    <link rel="icon" type="image/png" href="../images/favicon/favicon-satouillustration.png">
     <link rel="canonical" href="https://satouillustration.com/order/">
     
     <!-- Preconnect for Google Fonts -->
@@ -17,14 +18,14 @@
     <meta property="og:title" content="制作依頼フォーム - さとうゆうillustration">
     <meta property="og:description" content="アイコン、CD付録、看板など、あなたのプロジェクトに最適な手描きイラストを制作いたします。">
     <meta property="og:url" content="https://satouillustration.com/order/">
-    <meta property="og:image" content="https://satouillustration.com/images/ogp-order.jpg">
+    <meta property="og:image" content="https://satouillustration.com/images/ogp/ogp-satouillustration.jpg">
     <meta property="og:site_name" content="さとうゆうillustration">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="制作依頼フォーム - さとうゆうillustration">
     <meta name="twitter:description" content="アイコン、CD付録、看板など、あなたのプロジェクトに最適な手描きイラストを制作いたします。">
-    <meta name="twitter:image" content="https://satouillustration.com/images/ogp-order.jpg">
+    <meta name="twitter:image" content="https://satouillustration.com/images/ogp/ogp-satouillustration.jpg">
     
     <link rel="stylesheet" href="../assets/css/style.css">
     
@@ -67,8 +68,8 @@
                 <nav class="header__nav" aria-label="メインナビゲーション">
                     <ul class="header__nav-list">
                         <li><a href="../index.html" class="header__nav-link">トップ</a></li>
-                        <li><a href="../works/index.html" class="header__nav-link">実績一覧</a></li>
-                        <li><a href="index.html" class="header__nav-link" aria-current="page">制作依頼</a></li>
+                        <li><a href="../works/index.html" class="header__nav-link">gallery</a></li>
+                        <li><a href="index.html" class="header__nav-link" aria-current="page">ご依頼</a></li>
                         <li><a href="../contact/index.html" class="header__nav-link">お問い合わせ</a></li>
                         <li><a href="../links/index.html" class="header__nav-link">SNS</a></li>
                     </ul>
@@ -96,8 +97,8 @@
                 </div>
                 <ul class="drawer__nav-list">
                     <li><a href="../index.html" class="drawer__nav-link">トップ</a></li>
-                    <li><a href="../works/index.html" class="drawer__nav-link">実績一覧</a></li>
-                    <li><a href="index.html" class="drawer__nav-link" aria-current="page">制作依頼</a></li>
+                    <li><a href="../works/index.html" class="drawer__nav-link">gallery</a></li>
+                    <li><a href="index.html" class="drawer__nav-link" aria-current="page">ご依頼</a></li>
                     <li><a href="../contact/index.html" class="drawer__nav-link">お問い合わせ</a></li>
                     <li><a href="../links/index.html" class="drawer__nav-link">SNS</a></li>
                 </ul>
@@ -120,7 +121,7 @@
         <!-- Order Form -->
         <section class="order-form">
             <div class="container">
-                <form class="form" data-validate method="post" action="/order/submit">
+                <form class="form" method="post" action="https://mysterynotes.sakura.ne.jp/satouillustration/order/send.php">
                     <!-- Basic Information -->
                     <fieldset class="form-fieldset">
                         <legend class="form-legend">基本情報</legend>
@@ -217,6 +218,9 @@
                         </div>
                     </fieldset>
 
+                    <!-- Honeypot for spam prevention -->
+                    <input type="text" name="company" class="hp" autocomplete="off" tabindex="-1" aria-hidden="true" style="display:none;">
+                    
                     <div class="form-submit">
                         <button type="submit" class="btn btn--primary">送信する</button>
                     </div>
@@ -237,8 +241,8 @@
                 <nav class="footer__nav" aria-label="フッターナビゲーション">
                     <ul class="footer__nav-list">
                         <li><a href="../index.html" class="footer__nav-link">トップ</a></li>
-                        <li><a href="../works/index.html" class="footer__nav-link">実績一覧</a></li>
-                        <li><a href="index.html" class="footer__nav-link">制作依頼</a></li>
+                        <li><a href="../works/index.html" class="footer__nav-link">gallery</a></li>
+                        <li><a href="index.html" class="footer__nav-link">ご依頼</a></li>
                         <li><a href="../contact/index.html" class="footer__nav-link">お問い合わせ</a></li>
                         <li><a href="../links/index.html" class="footer__nav-link">SNS</a></li>
                     </ul>
@@ -246,12 +250,11 @@
             </div>
             
             <div class="footer__bottom">
-                <p class="footer__copyright">&copy; 2024 さとうゆうillustration. All rights reserved.</p>
+                <p class="footer__copyright">&copy; 2025 さとうゆうillustration. All rights reserved.</p>
             </div>
         </div>
     </footer>
 
     <script src="../assets/js/main.js"></script>
-    <script src="../assets/js/form-validation.js"></script>
 </body>
 </html>
