@@ -30,6 +30,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -488,57 +489,65 @@ p {
   color: var(--white);
 }
 
-/* Removed duplicate - using updated version below */
-
-/* ヒーロー画像の配置調整 - Picture要素対応 */
-.hero__background {
-  position: relative;
-  z-index: -2;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 2rem;
-  background: #FAF6F0;
+/* ヒーロー全体 */
+.hero {
   width: 100%;
-  max-width: 600px;
-  margin: 0 auto;
+  background: #FAF6F0;
+  padding-block: clamp(12px, 3.5vw, 28px);
 }
 
-.hero__bg-image {
+/* テキスト塊と画像の間隔（詰まり防止） */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 2.5vw, 24px);
+  margin-block-end: clamp(14px, 3.5vw, 28px);
+}
+
+/* 画像：ノークロップでブラウザ差を消す */
+.hero-img {
+  object-fit: contain;
   width: 100%;
   height: auto;
-  max-width: 500px;
-  object-fit: contain;
-  object-position: center;
+  background: #FAF6F0;
+  aspect-ratio: 1 / 1;
   display: block;
+  margin-inline: auto;
 }
 
-/* モバイル表示でのヒーロー画像調整 */
-@media (max-width: 767px) {
-  .hero__background {
-    padding: 1rem 1rem;
-  }
-  
+/* スマホ：可視領域に追従。vh差はdvhで統一 */
+@media (max-width: 640px) {
   .hero__bg-image {
+    max-height: 70dvh;
     object-fit: contain;
-    width: auto;
-    height: 100%;
-    max-width: 100%;
   }
-  
+
+  .top-title {
+    margin-top: 80px;
+    padding-top: 1rem;
+  }
+
   .top-title__text {
+    display: block;
+    visibility: visible;
+    font-size: clamp(16px, 4.4vw, 20px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     text-align: left;
   }
-  
+
   .hero-description__text {
     text-align: left !important;
-    font-size: 13px !important;
-    line-height: 1.2 !important;
-    max-width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    font-size: clamp(9px, 2.5vw, 12px) !important;
+    line-height: 1.4;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    max-width: 100%;
+    word-wrap: break-word;
   }
-  
+
   .section__description {
     text-align: left;
   }
@@ -558,52 +567,49 @@ p {
   .sns-about__description {
     text-align: left !important;
   }
-  
-  .mobile-nav-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-top: 1.5rem;
-  }
-  
-  .mobile-nav-btn {
-    display: block;
-    text-align: center;
-    padding: 0.75rem 1.5rem;
-    background: var(--white);
-    color: var(--acc);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    border: 2px solid var(--acc);
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    box-shadow: var(--shadow-light);
-  }
-  
-  .mobile-nav-btn:hover {
-    background: var(--acc);
-    color: var(--white);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-medium);
+}
+
+/* タブレット/PC：画像をより大きく（切らずに） */
+@media (min-width: 641px) {
+  .hero__bg-image {
+    width: 100%;
+    max-height: 60vh;
+    max-width: 800px;
+    margin-inline: auto;
+    object-fit: contain;
   }
 }
 
-/* スマホ表示でのヒーロー画像調整 */
-@media (max-width: 767px) {
-  .hero {
-    min-height: 60vh;
-  }
-  
-  .top-title {
-    margin-top: 70px;
-    padding: 1.5rem 0 0.5rem;
-  }
-  
-  .hero-description {
-    padding: 0.5rem 0 1.5rem;
-  }
+
+.mobile-nav-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
 }
+
+.mobile-nav-btn {
+  display: block;
+  text-align: center;
+  padding: 0.75rem 1.5rem;
+  background: var(--white);
+  color: var(--acc);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: 2px solid var(--acc);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-light);
+}
+
+.mobile-nav-btn:hover {
+  background: var(--acc);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
 
 
 .hero__content {
