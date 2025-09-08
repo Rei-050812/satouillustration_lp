@@ -1,0 +1,100 @@
+[2025-08-29 12:28:16] フォーム処理開始
+[2025-08-29 12:28:16] データ取得: name=[沼能零仁] email=[r-numanou@shokuken.co.jp] type=[general]
+[2025-08-29 12:28:16] 管理者メール送信開始
+[2025-08-29 12:28:18] 管理者メール結果: 成功
+[2025-08-29 12:28:18] 自動返信メール送信開始
+[2025-08-29 12:28:18] 自動返信メール結果: 成功
+[2025-08-29 12:28:18] 全メール送信成功 - サンクスページへリダイレクト
+[2025-08-29 12:48:41] フォーム処理開始
+[2025-08-29 12:48:41] データ取得: name=[沼能零仁] email=[r-numanou@shokuken.co.jp] type=[general]
+[2025-08-29 12:48:41] 管理者メール送信開始
+[2025-08-29 12:48:43] 管理者メール結果: 成功
+[2025-08-29 12:48:43] 自動返信メール送信開始
+[2025-08-29 12:48:43] 自動返信メール結果: 成功
+[2025-08-29 12:48:43] 全メール送信成功 - サンクスページへリダイレクト
+[2025-08-29 12:56:39] フォーム処理開始
+[2025-08-29 12:56:39] データ取得: name=[沼能零仁] email=[r-numanou@shokuken.co.jp] type=[general]
+[2025-08-29 12:56:39] 管理者メール送信開始
+[2025-08-29 12:56:39] 管理者メール詳細: To=susukishima0836@gmail.com, Subject==?UTF-8?B?44CQ44GK5ZWP44GE5ZCI44KP44Gb44CR44GV44Go44GG44KG44GGaWxsdXN0?=
+ =?UTF-8?B?cmF0aW9u?=
+[2025-08-29 12:56:39] 管理者メールヘッダー: From: r-numanou@shokuken.co.jp | Reply-To: r-numanou@shokuken.co.jp | Return-Path: noreply@mysterynotes.sakura.ne.jp | MIME-Version: 1.0 | Content-Type: text/plain; charset=UTF-8 | Content-Transfer-Encoding: 8bit | Message-ID: <68b124f73917e@mysterynotes.sakura.ne.jp> | Date: Fri, 29 Aug 2025 12:56:39 +0900 | X-Priority: 3 | X-Mailer: PHP/8.2.20
+[2025-08-29 12:56:39] 管理者メール結果: 成功
+[2025-08-29 12:56:39] 自動返信メール送信開始
+[2025-08-29 12:56:39] 自動返信メール結果: 成功
+[2025-08-29 12:56:39] 全メール送信成功 - サンクスページへリダイレクト
+[2025-08-29 13:15:05] フォーム処理開始
+[2025-08-29 13:15:05] データ取得: name=[沼能零仁] email=[r-numanou@shokuken.co.jp] type=[general]
+[2025-08-29 13:15:05] 管理者メール送信開始
+[2025-08-29 13:15:05] 管理者メール詳細: To=susukishima0836@gmail.com, Subject==?UTF-8?B?44CQ44GK5ZWP44GE5ZCI44KP44Gb44CR44GV44Go44GG44KG44GGaWxsdXN0?=
+ =?UTF-8?B?cmF0aW9u?=
+[2025-08-29 13:15:05] 管理者メールヘッダー: From: noreply@mysterynotes.sakura.ne.jp | Reply-To: r-numanou@shokuken.co.jp | MIME-Version: 1.0 | Content-Type: text/plain; charset=UTF-8 | Content-Transfer-Encoding: 8bit | X-Mailer: PHP/8.2.20
+[2025-08-29 13:15:05] 管理者メール結果: 成功
+[2025-08-29 13:15:05] 自動返信メール送信開始
+[2025-08-29 13:15:05] 自動返信メール結果: 成功
+[2025-08-29 13:15:05] 全メール送信成功 - サンクスページへリダイレクト
+[2025-08-29 13:21:50] フォーム処理開始
+[2025-08-29 13:21:50] データ取得: name=[沼能零仁] email=[r-numanou@shokuken.co.jp] type=[general]
+[2025-08-29 13:21:50] 管理者メール送信開始
+[2025-08-29 13:21:50] 管理者メール詳細: To=susukishima0836@gmail.com, Subject==?UTF-8?B?44CQ44GK5ZWP44GE5ZCI44KP44Gb44CR44GV44Go44GG44KG44GGaWxsdXN0?=
+ =?UTF-8?B?cmF0aW9u?=
+[2025-08-29 13:21:50] 管理者メールヘッダー: From: noreply@mysterynotes.sakura.ne.jp | Reply-To: r-numanou@shokuken.co.jp | MIME-Version: 1.0 | Content-Type: text/plain; charset=UTF-8 | Content-Transfer-Encoding: 8bit | X-Mailer: PHP/8.2.20
+[2025-08-29 13:21:50] 管理者メール結果: 成功
+[2025-08-29 13:21:50] 自動返信メール送信開始
+[2025-08-29 13:21:50] 自動返信メール結果: 成功
+[2025-08-29 13:21:50] 全メール送信成功 - サンクスページへリダイレクト
+[2025-08-29 13:31:59] フォーム処理開始
+[2025-08-29 13:31:59] データ取得: name=[沼能零仁] email=[r-numanou@shokuken.co.jp] type=[general]
+[2025-08-29 13:31:59] 管理者メール送信開始
+[2025-08-29 13:31:59] 管理者メール詳細: To=susukishima0836@gmail.com, Subject=【お問い合わせ】さとうゆうillustration
+[2025-08-29 13:31:59] 管理者メールヘッダー: From: noreply@mysterynotes.sakura.ne.jp | Reply-To: r-numanou@shokuken.co.jp | MIME-Version: 1.0 | Content-Type: text/plain; charset=UTF-8 | Content-Transfer-Encoding: 8bit | X-Mailer: PHP/8.2.20
+[2025-08-29 13:31:59] 管理者メール結果: 成功
+[2025-08-29 13:31:59] 自動返信メール送信開始
+[2025-08-29 13:31:59] 自動返信メール結果: 成功
+[2025-08-29 13:31:59] 全メール送信成功 - サンクスページへリダイレクト
+[2025-08-29 14:03:06] フォーム処理開始
+[2025-08-29 14:03:06] データ取得: name=[沼能 零仁] email=[r-numanou@shokuken.co.jp] type=[quote]
+[2025-08-29 14:03:06] 管理者メール送信開始
+[2025-08-29 14:03:06] 管理者メール詳細: To=susukishima0836@gmail.com, Subject=【お問い合わせ】さとうゆうillustration
+[2025-08-29 14:03:06] 管理者メールヘッダー: From: noreply@mysterynotes.sakura.ne.jp | Reply-To: r-numanou@shokuken.co.jp | MIME-Version: 1.0 | Content-Type: text/plain; charset=UTF-8 | Content-Transfer-Encoding: 8bit | X-Mailer: PHP/8.2.20
+[2025-08-29 14:03:07] 管理者メール結果: 成功
+[2025-08-29 14:03:07] 自動返信メール送信開始
+[2025-08-29 14:03:07] 自動返信メール結果: 成功
+[2025-08-29 14:03:07] 全メール送信成功 - サンクスページへリダイレクト
+[2025-08-29 14:12:55] フォーム処理開始
+[2025-08-29 14:12:55] データ取得: name=[沼能 零仁] email=[r-numanou@shokuken.co.jp] type=[process]
+[2025-08-29 14:12:55] 管理者メール送信開始
+[2025-08-29 14:12:55] 管理者メール詳細: To=susukishima0836@gmail.com, Subject=【お問い合わせ】さとうゆうillustration
+[2025-08-29 14:12:55] 管理者メールヘッダー: From: noreply@mysterynotes.sakura.ne.jp | Reply-To: r-numanou@shokuken.co.jp | MIME-Version: 1.0 | Content-Type: text/plain; charset=UTF-8 | Content-Transfer-Encoding: 8bit | X-Mailer: PHP/8.2.20
+[2025-08-29 14:12:55] 管理者メール結果: 成功
+[2025-08-29 14:12:55] 自動返信メール送信開始
+[2025-08-29 14:12:55] 自動返信メール結果: 成功
+[2025-08-29 14:12:55] 全メール送信成功 - サンクスページへリダイレクト
+[2025-08-29 14:31:19] フォーム処理開始
+[2025-08-29 14:31:19] データ取得: name=[沼能零仁] email=[0ua38w0z1m9195j@ezweb.ne.jp] type=[quote]
+[2025-08-29 14:31:19] 管理者メール送信開始
+[2025-08-29 14:31:19] 管理者メール詳細: To=susukishima0836@gmail.com, Subject=【お問い合わせ】さとうゆうillustration
+[2025-08-29 14:31:19] 管理者メールヘッダー: From: noreply@mysterynotes.sakura.ne.jp | Reply-To: 0ua38w0z1m9195j@ezweb.ne.jp | MIME-Version: 1.0 | Content-Type: text/plain; charset=UTF-8 | Content-Transfer-Encoding: 8bit | X-Mailer: PHP/8.2.20
+[2025-08-29 14:31:20] 管理者メール結果: 成功
+[2025-08-29 14:31:20] 自動返信メール送信開始
+[2025-08-29 14:31:20] 自動返信メール結果: 成功
+[2025-08-29 14:31:20] 全メール送信成功 - サンクスページへリダイレクト
+[2025-08-29 14:50:15] フォーム処理開始
+[2025-08-29 14:50:15] 非POSTリクエスト: GET
+[2025-08-29 15:28:51] フォーム処理開始
+[2025-08-29 15:28:51] データ取得: name=[沼能 零仁] email=[r-numanou@shokuken.co.jp] type=[process]
+[2025-08-29 15:28:51] 管理者メール送信開始
+[2025-08-29 15:28:51] 管理者メール詳細: To=susukishima0836@gmail.com, Subject=【お問い合わせ】さとうゆうillustration
+[2025-08-29 15:28:51] 管理者メールヘッダー: From: noreply@mysterynotes.sakura.ne.jp | Reply-To: r-numanou@shokuken.co.jp | MIME-Version: 1.0 | Content-Type: text/plain; charset=UTF-8 | Content-Transfer-Encoding: 8bit | X-Mailer: PHP/8.2.20
+[2025-08-29 15:28:52] 管理者メール結果: 成功
+[2025-08-29 15:28:52] 自動返信メール送信開始
+[2025-08-29 15:28:52] 自動返信メール結果: 成功
+[2025-08-29 15:28:52] 全メール送信成功 - サンクスページへリダイレクト
+[2025-08-30 22:46:46] フォーム処理開始
+[2025-08-30 22:46:46] データ取得: name=[沼能零仁] email=[0ua38w0z1m9195j@ezweb.ne.jp] type=[general]
+[2025-08-30 22:46:46] 管理者メール送信開始
+[2025-08-30 22:46:46] 管理者メール詳細: To=susukishima0836@gmail.com, Subject=【お問い合わせ】さとうゆうillustration
+[2025-08-30 22:46:46] 管理者メールヘッダー: From: noreply@mysterynotes.sakura.ne.jp | Reply-To: 0ua38w0z1m9195j@ezweb.ne.jp | MIME-Version: 1.0 | Content-Type: text/plain; charset=UTF-8 | Content-Transfer-Encoding: 8bit | X-Mailer: PHP/8.2.20
+[2025-08-30 22:46:46] 管理者メール結果: 成功
+[2025-08-30 22:46:46] 自動返信メール送信開始
+[2025-08-30 22:46:47] 自動返信メール結果: 成功
+[2025-08-30 22:46:47] 全メール送信成功 - サンクスページへリダイレクト

@@ -46,7 +46,8 @@ $project_title = isset($_POST['project-title']) ? trim(htmlspecialchars($_POST['
 $project_description = isset($_POST['project-description']) ? trim(htmlspecialchars($_POST['project-description'], ENT_QUOTES, 'UTF-8')) : '';
 $budget = isset($_POST['budget']) ? trim($_POST['budget']) : '';
 $deadline = isset($_POST['deadline']) ? trim(htmlspecialchars($_POST['deadline'], ENT_QUOTES, 'UTF-8')) : '';
-$additional_info = isset($_POST['additional-info']) ? trim(htmlspecialchars($_POST['additional-info'], ENT_QUOTES, 'UTF-8')) : '';
+$reference = isset($_POST['reference']) ? trim(htmlspecialchars($_POST['reference'], ENT_QUOTES, 'UTF-8')) : '';
+$additional_notes = isset($_POST['additional-notes']) ? trim(htmlspecialchars($_POST['additional-notes'], ENT_QUOTES, 'UTF-8')) : '';
 
 writeLog("データ取得: name=[$name] email=[$email] type=[$project_type]");
 
@@ -100,26 +101,19 @@ if (empty($budget)) {
 }
 
 // 管理者宛メール本文
-$admin_to = 'susukishima0836@gmail.com';
+$admin_to = '2285satou@gmail.com';
 $admin_subject = '【制作依頼】さとうゆうillustration';
 $admin_body = "制作依頼がありました。\n\n";
 $admin_body .= "■ お名前\n$name\n\n";
 $admin_body .= "■ メールアドレス\n$email\n\n";
-if (!empty($phone)) {
-    $admin_body .= "■ お電話番号\n$phone\n\n";
-}
+$admin_body .= "■ 電話番号\n" . (!empty($phone) ? $phone : '未入力') . "\n\n";
 $admin_body .= "■ 制作種別\n$project_type_text\n\n";
-$admin_body .= "■ プロジェクト名\n$project_title\n\n";
-$admin_body .= "■ 制作内容\n$project_description\n\n";
-if (!empty($budget_text)) {
-    $admin_body .= "■ ご予算\n$budget_text\n\n";
-}
-if (!empty($deadline)) {
-    $admin_body .= "■ ご希望納期\n$deadline\n\n";
-}
-if (!empty($additional_info)) {
-    $admin_body .= "■ その他・補足\n$additional_info\n\n";
-}
+$admin_body .= "■ プロジェクト名・タイトル\n$project_title\n\n";
+$admin_body .= "■ 制作内容の詳細\n$project_description\n\n";
+$admin_body .= "■ 希望納期\n" . (!empty($deadline) ? $deadline : '未入力') . "\n\n";
+$admin_body .= "■ ご予算\n" . (!empty($budget_text) ? $budget_text : '未入力') . "\n\n";
+$admin_body .= "■ 参考資料・イメージ\n" . (!empty($reference) ? $reference : '未入力') . "\n\n";
+$admin_body .= "■ その他ご要望\n" . (!empty($additional_notes) ? $additional_notes : '未入力') . "\n\n";
 $admin_body .= "■ 送信日時\n" . date('Y年n月j日 H時i分') . "\n";
 
 // セキュリティチェック
@@ -182,17 +176,19 @@ $user_body .= "この度は、さとうゆうillustrationに制作依頼をい�
 $user_body .= "以下の内容で制作依頼を受付いたしました。\n";
 $user_body .= "3営業日以内にお見積もりをご連絡させていただきます。\n\n";
 $user_body .= "【受付内容】\n";
-$user_body .= "プロジェクト名: $project_title\n";
-$user_body .= "制作種別: $project_type_text\n";
-if (!empty($budget_text)) {
-    $user_body .= "ご予算: $budget_text\n";
-}
-if (!empty($deadline)) {
-    $user_body .= "ご希望納期: $deadline\n";
-}
+$user_body .= "■ お名前\n$name\n\n";
+$user_body .= "■ メールアドレス\n$email\n\n";
+$user_body .= "■ 電話番号\n" . (!empty($phone) ? $phone : '未入力') . "\n\n";
+$user_body .= "■ 制作種別\n$project_type_text\n\n";
+$user_body .= "■ プロジェクト名・タイトル\n$project_title\n\n";
+$user_body .= "■ 制作内容の詳細\n$project_description\n\n";
+$user_body .= "■ 希望納期\n" . (!empty($deadline) ? $deadline : '未入力') . "\n\n";
+$user_body .= "■ ご予算\n" . (!empty($budget_text) ? $budget_text : '未入力') . "\n\n";
+$user_body .= "■ 参考資料・イメージ\n" . (!empty($reference) ? $reference : '未入力') . "\n\n";
+$user_body .= "■ その他ご要望\n" . (!empty($additional_notes) ? $additional_notes : '未入力') . "\n\n";
 $user_body .= "\n─────────────────\n";
 $user_body .= "さとうゆうillustration\n";
-$user_body .= "Email: r-numanou@zero-venture.com\n";
+$user_body .= "Email: 2285satou@gmail.com\n";
 
 $user_headers = [
     'From: noreply@mysterynotes.sakura.ne.jp',

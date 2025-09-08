@@ -75,14 +75,12 @@ $inquiry_types = [
 $inquiry_text = isset($inquiry_types[$inquiry_type]) ? $inquiry_types[$inquiry_type] : $inquiry_type;
 
 // 管理者宛メール本文
-$admin_to = 'susukishima0836@gmail.com';
+$admin_to = '2285satou@gmail.com';
 $admin_subject = '【お問い合わせ】さとうゆうillustration';
 $admin_body = "お問い合わせがありました。\n\n";
 $admin_body .= "■ お名前\n$name\n\n";
 $admin_body .= "■ メールアドレス\n$email\n\n";
-if (!empty($phone)) {
-    $admin_body .= "■ お電話番号\n$phone\n\n";
-}
+$admin_body .= "■ 電話番号\n" . (!empty($phone) ? $phone : '未入力') . "\n\n";
 $admin_body .= "■ お問い合わせ種別\n$inquiry_text\n\n";
 $admin_body .= "■ 件名\n$subject\n\n";
 $admin_body .= "■ お問い合わせ内容\n$message\n\n";
@@ -148,11 +146,15 @@ $user_body .= "この度は、さとうゆうillustrationにお問い合わせ�
 $user_body .= "以下の内容でお問い合わせを受付いたしました。\n";
 $user_body .= "3営業日以内にご返信させていただきます。\n\n";
 $user_body .= "【受付内容】\n";
-$user_body .= "件名: $subject\n";
-$user_body .= "種別: $inquiry_text\n\n";
+$user_body .= "■ お名前\n$name\n\n";
+$user_body .= "■ メールアドレス\n$email\n\n";
+$user_body .= "■ 電話番号\n" . (!empty($phone) ? $phone : '未入力') . "\n\n";
+$user_body .= "■ お問い合わせ種別\n$inquiry_text\n\n";
+$user_body .= "■ 件名\n$subject\n\n";
+$user_body .= "■ お問い合わせ内容\n$message\n\n";
 $user_body .= "─────────────────\n";
 $user_body .= "さとうゆうillustration\n";
-$user_body .= "Email: r-numanou@zero-venture.com\n";
+$user_body .= "Email: 2285satou@gmail.com\n";
 
 $user_headers = [
     'From: noreply@mysterynotes.sakura.ne.jp',

@@ -18,14 +18,14 @@
     <meta property="og:title" content="gallery - さとうゆうillustration">
     <meta property="og:description" content="あたたかみのある手描きイラスト作品を色別にフィルタリングしてご覧いただけます。">
     <meta property="og:url" content="https://satouillustration.com/works/">
-    <meta property="og:image" content="https://satouillustration.com/images/ogp/ogp-satouillustration.jpg">
+    <meta property="og:image" content="https://satouillustration.com/images/ogp/ogp-satouillustration-1200x630.jpg">
     <meta property="og:site_name" content="さとうゆうillustration">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="gallery - さとうゆうillustration">
     <meta name="twitter:description" content="あたたかみのある手描きイラスト作品を色別にフィルタリングしてご覧いただけます。">
-    <meta name="twitter:image" content="https://satouillustration.com/images/ogp/ogp-satouillustration.jpg">
+    <meta name="twitter:image" content="https://satouillustration.com/images/ogp/ogp-satouillustration-1200x630.jpg">
     
     <link rel="stylesheet" href="../assets/css/style.css">
     
@@ -127,10 +127,14 @@
                     <!-- Work Item 1 -->
                     <article id="work-1" class="work-card" data-genre="monochrome">
                         <div class="work-card__link">
-                            <img src="../images/works/work-01-thumb.jpg" alt="檸檬さま 1st Album 再訪の街 透明な約束 特典巾着イラスト" 
-                                 class="work-card__image" width="360" height="270" loading="lazy" decoding="async">
+                            <picture>
+                                <source type="image/webp" srcset="../images/works/work-01-360.webp 360w, ../images/works/work-01-800.webp 800w" sizes="(max-width: 768px) 360px, 500px">
+                                <source type="image/jpeg" srcset="../images/works/work-01-360.jpg 360w, ../images/works/work-01-800.jpg 800w" sizes="(max-width: 768px) 360px, 500px">
+                                <img src="../images/works/work-01-360.jpg" alt="檸檬さま 1st Album 再訪の街 透明な約束 特典巾着イラスト" 
+                                     class="work-card__image" width="360" height="360" loading="lazy" decoding="async">
+                            </picture>
                             <div class="work-card__content">
-                                <h2 class="work-card__title">檸檬さま 1st Album 再訪の街 透明な約束 特典巾着イラスト（2025）</h2>
+                                <h2 class="work-card__title">檸檬 1st Album 『再訪の街 透明な約束』 特典巾着用イラスト（2025）</h2>
                             </div>
                         </div>
                     </article>
@@ -138,8 +142,12 @@
                     <!-- Work Item 2 -->
                     <article id="work-2" class="work-card" data-genre="monochrome">
                         <div class="work-card__link">
-                            <img src="../images/works/work-02-thumb.jpg" alt="左藤吹きガラス工房 メッセージカード用イラスト" 
-                                 class="work-card__image" width="360" height="270" loading="lazy" decoding="async">
+                            <picture>
+                                <source type="image/webp" srcset="../images/works/work-02-360.webp 360w, ../images/works/work-02-800.webp 800w" sizes="(max-width: 768px) 360px, 500px">
+                                <source type="image/jpeg" srcset="../images/works/work-02-360.jpg 360w, ../images/works/work-02-800.jpg 800w" sizes="(max-width: 768px) 360px, 500px">
+                                <img src="../images/works/work-02-360.jpg" alt="左藤吹きガラス工房 メッセージカード用イラスト" 
+                                     class="work-card__image" width="360" height="360" loading="lazy" decoding="async">
+                            </picture>
                             <div class="work-card__content">
                                 <h2 class="work-card__title">左藤吹きガラス工房 メッセージカード用イラスト（2023）</h2>
                             </div>
@@ -149,8 +157,12 @@
                     <!-- Work Item 3 -->
                     <article id="work-3" class="work-card" data-genre="color">
                         <div class="work-card__link">
-                            <img src="../images/works/work-03-thumb.jpg" alt="Hanako Web連載『Noyauのムーンレター〜月とアロマのご自愛レスキュー〜』アイキャッチ用イラスト" 
-                                 class="work-card__image" width="360" height="270" loading="lazy" decoding="async">
+                            <picture>
+                                <source type="image/webp" srcset="../images/works/work-03-360.webp 360w, ../images/works/work-03-800.webp 800w" sizes="(max-width: 768px) 360px, 500px">
+                                <source type="image/jpeg" srcset="../images/works/work-03-360.jpg 360w, ../images/works/work-03-800.jpg 800w" sizes="(max-width: 768px) 360px, 500px">
+                                <img src="../images/works/work-03-360.jpg" alt="Hanako Web連載『Noyauのムーンレター〜月とアロマのご自愛レスキュー〜』アイキャッチ用イラスト" 
+                                     class="work-card__image" width="360" height="360" loading="lazy" decoding="async">
+                            </picture>
                             <div class="work-card__content">
                                 <h2 class="work-card__title">Hanako Web連載『Noyauのムーンレター〜月とアロマのご自愛レスキュー〜』アイキャッチ用イラスト（2023）</h2>
                             </div>
@@ -166,6 +178,30 @@
             </div>
         </section>
     </main>
+
+    <!-- Modal -->
+    <div id="work-modal" class="modal">
+        <div class="modal__overlay">
+            <div class="modal__content">
+                <button class="modal__close" type="button" aria-label="閉じる">
+                    <span class="modal__close-icon">×</span>
+                </button>
+                <div class="modal__body">
+                    <div class="modal__image-container">
+                        <picture class="modal__picture">
+                            <img id="modal-image" src="" alt="" class="modal__image">
+                        </picture>
+                    </div>
+                    <div class="modal__info">
+                        <h2 id="modal-title" class="modal__title"></h2>
+                        <div id="modal-description" class="modal__description">
+                            <!-- 詳細情報がここに入ります -->
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <!-- Footer -->
     <footer class="footer">

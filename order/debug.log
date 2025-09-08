@@ -1,0 +1,117 @@
+[2025-08-29 12:30:04] 制作依頼フォーム処理開始
+[2025-08-29 12:30:04] データ取得: name=[沼能零仁] email=[r-numanou@shokuken.co.jp] type=[icon]
+[2025-08-29 12:30:04] 管理者メール送信開始
+[2025-08-29 12:30:04] 管理者メール結果: 成功
+[2025-08-29 12:30:04] 自動返信メール送信開始
+[2025-08-29 12:30:04] 自動返信メール結果: 成功
+[2025-08-29 12:30:04] 全メール送信成功 - サンクスページへリダイレクト
+[2025-08-29 13:33:12] 制作依頼フォーム処理開始
+[2025-08-29 13:33:12] データ取得: name=[沼能零仁] email=[r-numanou@shokuken.co.jp] type=[icon]
+[2025-08-29 13:33:12] 管理者メール送信開始
+[2025-08-29 13:33:12] 管理者メール詳細: To=susukishima0836@gmail.com, Subject=【制作依頼】さとうゆうillustration
+[2025-08-29 13:33:12] 管理者メールヘッダー: From: noreply@mysterynotes.sakura.ne.jp | Reply-To: r-numanou@shokuken.co.jp | MIME-Version: 1.0 | Content-Type: text/plain; charset=UTF-8 | Content-Transfer-Encoding: 8bit | X-Mailer: PHP/8.2.20
+[2025-08-29 13:33:12] 管理者メール結果: 成功
+[2025-08-29 13:33:12] 自動返信メール送信開始
+[2025-08-29 13:33:12] 自動返信メール結果: 成功
+[2025-08-29 13:33:12] 全メール送信成功 - サンクスページへリダイレクト
+[2025-08-29 13:52:49] 制作依頼フォーム処理開始
+[2025-08-29 13:52:49] データ取得: name=[沼能 零仁] email=[r-numanou@shokuken.co.jp] type=[icon]
+[2025-08-29 13:52:49] 管理者メール送信開始
+[2025-08-29 13:52:49] 管理者メール詳細: To=susukishima0836@gmail.com, Subject=【制作依頼】さとうゆうillustration
+[2025-08-29 13:52:49] 管理者メールヘッダー: From: noreply@mysterynotes.sakura.ne.jp | Reply-To: r-numanou@shokuken.co.jp | MIME-Version: 1.0 | Content-Type: text/plain; charset=UTF-8 | Content-Transfer-Encoding: 8bit | X-Mailer: PHP/8.2.20
+[2025-08-29 13:52:49] 管理者メール結果: 成功
+[2025-08-29 13:52:49] 自動返信メール送信開始
+[2025-08-29 13:52:50] 自動返信メール結果: 成功
+[2025-08-29 13:52:50] 全メール送信成功 - サンクスページへリダイレクト
+[2025-08-29 14:05:26] 制作依頼フォーム処理開始
+[2025-08-29 14:05:26] データ取得: name=[沼能 零仁] email=[r-numanou@shokuken.co.jp] type=[icon]
+[2025-08-29 14:05:26] 管理者メール送信開始
+[2025-08-29 14:05:26] 管理者メール詳細: To=susukishima0836@gmail.com, Subject=【制作依頼】さとうゆうillustration
+[2025-08-29 14:05:26] 管理者メールヘッダー: From: noreply@mysterynotes.sakura.ne.jp | Reply-To: r-numanou@shokuken.co.jp | MIME-Version: 1.0 | Content-Type: text/plain; charset=UTF-8 | Content-Transfer-Encoding: 8bit | X-Mailer: PHP/8.2.20
+[2025-08-29 14:05:26] 管理者メール結果: 成功
+[2025-08-29 14:05:26] 自動返信メール送信開始
+[2025-08-29 14:05:26] 自動返信メール結果: 成功
+[2025-08-29 14:05:26] 全メール送信成功 - サンクスページへリダイレクト
+[2025-08-29 14:09:27] 制作依頼フォーム処理開始
+[2025-08-29 14:09:27] データ取得: name=[沼能 零仁] email=[r-numanou@shokuken.co.jp] type=[icon]
+[2025-08-29 14:09:27] 管理者メール送信開始
+[2025-08-29 14:09:27] 管理者メール詳細: To=susukishima0836@gmail.com, Subject=【制作依頼】さとうゆうillustration
+[2025-08-29 14:09:27] 管理者メールヘッダー: From: noreply@mysterynotes.sakura.ne.jp | Reply-To: r-numanou@shokuken.co.jp | MIME-Version: 1.0 | Content-Type: text/plain; charset=UTF-8 | Content-Transfer-Encoding: 8bit | X-Mailer: PHP/8.2.20
+[2025-08-29 14:09:27] 管理者メール結果: 成功
+[2025-08-29 14:09:27] 自動返信メール送信開始
+[2025-08-29 14:09:27] 自動返信メール結果: 成功
+[2025-08-29 14:09:27] 全メール送信成功 - サンクスページへリダイレクト
+[2025-08-29 14:11:50] 制作依頼フォーム処理開始
+[2025-08-29 14:11:50] データ取得: name=[沼能 零仁] email=[r-numanou@shokuken.co.jp] type=[icon]
+[2025-08-29 14:11:50] 予算デバッグ: 受信した予算値 = 'consultation'
+[2025-08-29 14:11:50] 予算デバッグ: 空かどうか = false
+[2025-08-29 14:11:50] 予算デバッグ: 変換後のbudget_text = '要相談'
+[2025-08-29 14:11:50] 管理者メール送信開始
+[2025-08-29 14:11:50] 管理者メール詳細: To=susukishima0836@gmail.com, Subject=【制作依頼】さとうゆうillustration
+[2025-08-29 14:11:50] 管理者メールヘッダー: From: noreply@mysterynotes.sakura.ne.jp | Reply-To: r-numanou@shokuken.co.jp | MIME-Version: 1.0 | Content-Type: text/plain; charset=UTF-8 | Content-Transfer-Encoding: 8bit | X-Mailer: PHP/8.2.20
+[2025-08-29 14:11:50] 管理者メール結果: 成功
+[2025-08-29 14:11:50] 自動返信メール送信開始
+[2025-08-29 14:11:51] 自動返信メール結果: 成功
+[2025-08-29 14:11:51] 全メール送信成功 - サンクスページへリダイレクト
+[2025-08-29 14:13:40] 制作依頼フォーム処理開始
+[2025-08-29 14:13:40] データ取得: name=[沼能 零仁] email=[r-numanou@shokuken.co.jp] type=[web]
+[2025-08-29 14:13:40] 予算デバッグ: 受信した予算値 = '50000-100000'
+[2025-08-29 14:13:40] 予算デバッグ: 空かどうか = false
+[2025-08-29 14:13:40] 予算デバッグ: 変換後のbudget_text = '5万円〜10万円'
+[2025-08-29 14:13:40] 管理者メール送信開始
+[2025-08-29 14:13:40] 管理者メール詳細: To=susukishima0836@gmail.com, Subject=【制作依頼】さとうゆうillustration
+[2025-08-29 14:13:40] 管理者メールヘッダー: From: noreply@mysterynotes.sakura.ne.jp | Reply-To: r-numanou@shokuken.co.jp | MIME-Version: 1.0 | Content-Type: text/plain; charset=UTF-8 | Content-Transfer-Encoding: 8bit | X-Mailer: PHP/8.2.20
+[2025-08-29 14:13:41] 管理者メール結果: 成功
+[2025-08-29 14:13:41] 自動返信メール送信開始
+[2025-08-29 14:13:41] 自動返信メール結果: 成功
+[2025-08-29 14:13:41] 全メール送信成功 - サンクスページへリダイレクト
+[2025-08-29 14:50:54] 制作依頼フォーム処理開始
+[2025-08-29 14:50:54] 非POSTリクエスト: GET
+[2025-08-29 15:28:45] 制作依頼フォーム処理開始
+[2025-08-29 15:28:45] データ取得: name=[沼能 零仁] email=[r-numanou@shokuken.co.jp] type=[icon]
+[2025-08-29 15:28:45] 予算デバッグ: 受信した予算値 = '50000-100000'
+[2025-08-29 15:28:45] 予算デバッグ: 空かどうか = false
+[2025-08-29 15:28:45] 予算デバッグ: 変換後のbudget_text = '5万円〜10万円'
+[2025-08-29 15:28:45] 管理者メール送信開始
+[2025-08-29 15:28:45] 管理者メール詳細: To=susukishima0836@gmail.com, Subject=【制作依頼】さとうゆうillustration
+[2025-08-29 15:28:45] 管理者メールヘッダー: From: noreply@mysterynotes.sakura.ne.jp | Reply-To: r-numanou@shokuken.co.jp | MIME-Version: 1.0 | Content-Type: text/plain; charset=UTF-8 | Content-Transfer-Encoding: 8bit | X-Mailer: PHP/8.2.20
+[2025-08-29 15:28:45] 管理者メール結果: 成功
+[2025-08-29 15:28:45] 自動返信メール送信開始
+[2025-08-29 15:28:46] 自動返信メール結果: 成功
+[2025-08-29 15:28:46] 全メール送信成功 - サンクスページへリダイレクト
+[2025-08-30 22:47:37] 制作依頼フォーム処理開始
+[2025-08-30 22:47:37] データ取得: name=[沼能零仁] email=[0ua38w0z1m9195j@ezweb.ne.jp] type=[icon]
+[2025-08-30 22:47:37] 予算デバッグ: 受信した予算値 = 'under-30000'
+[2025-08-30 22:47:37] 予算デバッグ: 空かどうか = false
+[2025-08-30 22:47:37] 予算デバッグ: 変換後のbudget_text = '3万円未満'
+[2025-08-30 22:47:37] 管理者メール送信開始
+[2025-08-30 22:47:37] 管理者メール詳細: To=susukishima0836@gmail.com, Subject=【制作依頼】さとうゆうillustration
+[2025-08-30 22:47:37] 管理者メールヘッダー: From: noreply@mysterynotes.sakura.ne.jp | Reply-To: 0ua38w0z1m9195j@ezweb.ne.jp | MIME-Version: 1.0 | Content-Type: text/plain; charset=UTF-8 | Content-Transfer-Encoding: 8bit | X-Mailer: PHP/8.2.20
+[2025-08-30 22:47:38] 管理者メール結果: 成功
+[2025-08-30 22:47:38] 自動返信メール送信開始
+[2025-08-30 22:47:39] 自動返信メール結果: 成功
+[2025-08-30 22:47:39] 全メール送信成功 - サンクスページへリダイレクト
+[2025-08-30 22:48:14] 制作依頼フォーム処理開始
+[2025-08-30 22:48:14] データ取得: name=[沼能零仁] email=[0ua38w0z1m9195j@ezweb.ne.jp] type=[icon]
+[2025-08-30 22:48:14] 予算デバッグ: 受信した予算値 = 'under-30000'
+[2025-08-30 22:48:14] 予算デバッグ: 空かどうか = false
+[2025-08-30 22:48:14] 予算デバッグ: 変換後のbudget_text = '3万円未満'
+[2025-08-30 22:48:14] 管理者メール送信開始
+[2025-08-30 22:48:14] 管理者メール詳細: To=susukishima0836@gmail.com, Subject=【制作依頼】さとうゆうillustration
+[2025-08-30 22:48:14] 管理者メールヘッダー: From: noreply@mysterynotes.sakura.ne.jp | Reply-To: 0ua38w0z1m9195j@ezweb.ne.jp | MIME-Version: 1.0 | Content-Type: text/plain; charset=UTF-8 | Content-Transfer-Encoding: 8bit | X-Mailer: PHP/8.2.20
+[2025-08-30 22:48:15] 管理者メール結果: 成功
+[2025-08-30 22:48:15] 自動返信メール送信開始
+[2025-08-30 22:48:15] 自動返信メール結果: 成功
+[2025-08-30 22:48:15] 全メール送信成功 - サンクスページへリダイレクト
+[2025-08-30 22:59:30] 制作依頼フォーム処理開始
+[2025-08-30 22:59:30] データ取得: name=[沼能零仁] email=[0ua38w0z1m9195j@ezweb.ne.jp] type=[icon]
+[2025-08-30 22:59:30] 予算デバッグ: 受信した予算値 = 'under-30000'
+[2025-08-30 22:59:30] 予算デバッグ: 空かどうか = false
+[2025-08-30 22:59:30] 予算デバッグ: 変換後のbudget_text = '3万円未満'
+[2025-08-30 22:59:30] 管理者メール送信開始
+[2025-08-30 22:59:30] 管理者メール詳細: To=susukishima0836@gmail.com, Subject=【制作依頼】さとうゆうillustration
+[2025-08-30 22:59:30] 管理者メールヘッダー: From: noreply@mysterynotes.sakura.ne.jp | Reply-To: 0ua38w0z1m9195j@ezweb.ne.jp | MIME-Version: 1.0 | Content-Type: text/plain; charset=UTF-8 | Content-Transfer-Encoding: 8bit | X-Mailer: PHP/8.2.20
+[2025-08-30 22:59:31] 管理者メール結果: 成功
+[2025-08-30 22:59:31] 自動返信メール送信開始
+[2025-08-30 22:59:31] 自動返信メール結果: 成功
+[2025-08-30 22:59:31] 全メール送信成功 - サンクスページへリダイレクト

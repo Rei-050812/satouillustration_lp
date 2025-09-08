@@ -30,6 +30,7 @@
 
 html {
   scroll-behavior: smooth;
+  -webkit-text-size-adjust: 100%;
 }
 
 body {
@@ -476,71 +477,77 @@ p {
 /* ===== Hero Section ===== */
 .hero {
   position: relative;
-  min-height: 70vh;
+  width: 100%;
+  height: auto;
+  min-height: 400px;
+  padding: 2rem 0;
+  overflow: visible;
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
   color: var(--white);
-  overflow: hidden;
 }
 
-.hero__background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -2;
-}
-
-.hero__bg-image {
+/* ヒーロー全体 */
+.hero {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  background: #FAF6F0;
+  padding-block: clamp(12px, 3.5vw, 28px);
 }
 
-/* ヒーロー画像の配置調整 */
-.hero__background {
-  position: absolute;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  z-index: -2;
-  padding: 1.5rem calc(var(--container-padding) * 0.5);
+/* テキスト塊と画像の間隔（詰まり防止） */
+.hero-content {
+  display: flex;
+  flex-direction: column;
+  gap: clamp(12px, 2.5vw, 24px);
+  margin-block-end: clamp(14px, 3.5vw, 28px);
 }
 
-.hero__bg-image {
-  width: 100%;
-  height: 100%;
+/* 画像：ノークロップでブラウザ差を消す */
+.hero-img {
   object-fit: contain;
-  object-position: center;
+  width: 100%;
+  height: auto;
+  background: #FAF6F0;
+  aspect-ratio: 1 / 1;
+  display: block;
+  margin-inline: auto;
 }
 
-/* モバイル表示でのヒーロー画像調整 */
-@media (max-width: 767px) {
-  .hero__background {
-    padding: 0.5rem calc(var(--container-padding) * 1.2);
-  }
-  
+/* スマホ：可視領域に追従。vh差はdvhで統一 */
+@media (max-width: 640px) {
   .hero__bg-image {
+    max-height: 70dvh;
     object-fit: contain;
   }
-  
+
+  .top-title {
+    margin-top: 80px;
+    padding-top: 1rem;
+  }
+
   .top-title__text {
+    display: block;
+    visibility: visible;
+    font-size: clamp(16px, 4.4vw, 20px);
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
     text-align: left;
   }
-  
+
   .hero-description__text {
     text-align: left !important;
-    font-size: 13px !important;
-    line-height: 1.2 !important;
-    max-width: 100% !important;
-    margin-left: 0 !important;
-    margin-right: 0 !important;
+    font-size: clamp(9px, 2.5vw, 12px) !important;
+    line-height: 1.4;
+    white-space: normal !important;
+    overflow: visible !important;
+    text-overflow: unset !important;
+    max-width: 100%;
+    word-wrap: break-word;
   }
-  
+
   .section__description {
     text-align: left;
   }
@@ -560,52 +567,49 @@ p {
   .sns-about__description {
     text-align: left !important;
   }
-  
-  .mobile-nav-buttons {
-    display: flex;
-    flex-direction: column;
-    gap: 0.75rem;
-    margin-top: 1.5rem;
-  }
-  
-  .mobile-nav-btn {
-    display: block;
-    text-align: center;
-    padding: 0.75rem 1.5rem;
-    background: var(--white);
-    color: var(--acc);
-    text-decoration: none;
-    font-weight: 500;
-    font-size: 0.95rem;
-    border: 2px solid var(--acc);
-    border-radius: 50px;
-    transition: all 0.3s ease;
-    box-shadow: var(--shadow-light);
-  }
-  
-  .mobile-nav-btn:hover {
-    background: var(--acc);
-    color: var(--white);
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-medium);
+}
+
+/* タブレット/PC：画像をより大きく（切らずに） */
+@media (min-width: 641px) {
+  .hero__bg-image {
+    width: 100%;
+    max-height: 60vh;
+    max-width: 800px;
+    margin-inline: auto;
+    object-fit: contain;
   }
 }
 
-/* スマホ表示でのヒーロー画像調整 */
-@media (max-width: 767px) {
-  .hero {
-    min-height: 60vh;
-  }
-  
-  .top-title {
-    margin-top: 70px;
-    padding: 1.5rem 0 0.5rem;
-  }
-  
-  .hero-description {
-    padding: 0.5rem 0 1.5rem;
-  }
+
+.mobile-nav-buttons {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+  margin-top: 1.5rem;
 }
+
+.mobile-nav-btn {
+  display: block;
+  text-align: center;
+  padding: 0.75rem 1.5rem;
+  background: var(--white);
+  color: var(--acc);
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 0.95rem;
+  border: 2px solid var(--acc);
+  border-radius: 50px;
+  transition: all 0.3s ease;
+  box-shadow: var(--shadow-light);
+}
+
+.mobile-nav-btn:hover {
+  background: var(--acc);
+  color: var(--white);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-medium);
+}
+
 
 
 .hero__content {
@@ -720,9 +724,10 @@ p {
 .work-card__image {
   width: 100%;
   height: auto;
-  aspect-ratio: 1;
+  aspect-ratio: 1 / 1;
   object-fit: cover;
   object-position: center;
+  display: block;
 }
 
 .work-card__content {
@@ -738,6 +743,7 @@ p {
   text-overflow: ellipsis;
   display: -webkit-box;
   -webkit-line-clamp: 2;
+  line-clamp: 2;
   -webkit-box-orient: vertical;
 }
 
@@ -1253,6 +1259,14 @@ a:focus {
 }
 
 .thanks-note-title {
+  text-align: center;
+}
+
+.thanks-note-list {
+  text-align: left;
+}
+
+.thanks-note-title {
   font-size: 1.2rem;
   font-weight: 700;
   color: var(--primary);
@@ -1311,6 +1325,38 @@ a:focus {
   
   .thanks-note {
     padding: 1.5rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .thanks-title {
+    font-size: 1.5rem;
+    text-align: center;
+  }
+  
+  .thanks-description {
+    font-size: 1rem;
+    text-align: left;
+  }
+  
+  .thanks-note {
+    padding: 1.5rem;
+  }
+  
+  .thanks-note-title {
+    text-align: center;
+  }
+  
+  .thanks-note-list {
+    text-align: left;
+  }
+  
+  .thanks-content {
+    text-align: left;
+  }
+  
+  .thanks-message {
+    text-align: left;
   }
 }
 
@@ -1418,6 +1464,178 @@ a:focus {
   opacity: 0.8;
   line-height: 1.6;
   text-align: center;
+}
+
+/* ===== Modal ===== */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 9999;
+  opacity: 0;
+  visibility: hidden;
+  transition: opacity var(--transition), visibility var(--transition);
+}
+
+.modal.is-open {
+  opacity: 1;
+  visibility: visible;
+}
+
+.modal__overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem 1rem;
+  cursor: pointer;
+}
+
+.modal__content {
+  background: var(--white);
+  border-radius: 20px;
+  max-width: 90vw;
+  max-height: 95vh;
+  width: 100%;
+  max-width: 900px;
+  position: relative;
+  transform: scale(0.9);
+  transition: transform var(--transition);
+  cursor: default;
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.modal.is-open .modal__content {
+  transform: scale(1);
+}
+
+.modal__close {
+  position: absolute;
+  top: 1rem;
+  right: 1rem;
+  width: 40px;
+  height: 40px;
+  background: rgba(255, 255, 255, 0.9);
+  border: none;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  z-index: 10;
+  transition: var(--transition);
+  backdrop-filter: blur(4px);
+}
+
+.modal__close:hover {
+  background: var(--white);
+  transform: scale(1.1);
+}
+
+.modal__close-icon {
+  font-size: 1.5rem;
+  color: var(--ink);
+  line-height: 1;
+}
+
+.modal__body {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.modal__image-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--gray-light);
+  min-height: 300px;
+  padding: 1rem;
+}
+
+.modal__picture {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.modal__image {
+  max-width: 100%;
+  max-height: 70vh;
+  object-fit: contain;
+  display: block;
+}
+
+.modal__info {
+  padding: 2rem 2rem 1.5rem 2rem;
+  background: var(--white);
+  flex-shrink: 0;
+}
+
+.modal__title {
+  font-size: 1rem;
+  font-weight: 500;
+  line-height: 1.2;
+  margin: 0 0 1rem 0;
+  color: var(--ink);
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.modal__description {
+  font-size: 0.9rem;
+  line-height: 1.6;
+  color: var(--gray-dark);
+  margin: 0;
+}
+
+/* Mobile adjustments for modal */
+@media (max-width: 768px) {
+  .modal__content {
+    max-width: 95vw;
+    max-height: 95vh;
+  }
+  
+  .modal__body {
+    flex-direction: column;
+  }
+  
+  .modal__image-container {
+    min-height: 250px;
+    padding: 0.5rem;
+  }
+  
+  .modal__image {
+    max-height: 50vh;
+  }
+  
+  .modal__info {
+    padding: 1.5rem;
+  }
+  
+  .modal__title {
+    font-size: 1.1rem;
+    white-space: normal;
+    overflow: visible;
+    text-overflow: unset;
+  }
+  
+  .modal__description {
+    font-size: 0.85rem;
+  }
 }
 
 /* ===== Print Styles ===== */

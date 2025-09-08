@@ -3,6 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <meta name="format-detection" content="telephone=no">
     <meta name="description" content="さとうゆうのイラストレーションポートフォリオサイト。イラスト制作を承っております。アイコン、挿絵、グッズイラストなど、あたたかみのある手描きイラストを制作します。">
     <title>さとうゆうillustration - あたたかみのある手描きイラスト</title>
     <link rel="icon" type="image/png" href="images/favicon/favicon-satouillustration.png">
@@ -18,14 +19,19 @@
     <meta property="og:title" content="さとうゆうillustration - あたたかみのある手描きイラスト">
     <meta property="og:description" content="あたたかみのある手描きイラストを制作します。アイコン、挿絵、グッズイラストなど、心を込めて制作します。">
     <meta property="og:url" content="https://satouillustration.com/">
-    <meta property="og:image" content="https://satouillustration.com/images/ogp/ogp-satouillustration.jpg">
+    <meta property="og:image" content="https://satouillustration.com/images/ogp/ogp-satouillustration-1200x630.jpg">
     <meta property="og:site_name" content="さとうゆうillustration">
     
     <!-- Twitter Card -->
     <meta name="twitter:card" content="summary_large_image">
     <meta name="twitter:title" content="さとうゆうillustration - あたたかみのある手描きイラスト">
     <meta name="twitter:description" content="あたたかみのある手描きイラストを制作します。アイコン、挿絵、グッズイラストなど、心を込めて制作します。">
-    <meta name="twitter:image" content="https://satouillustration.com/images/ogp/ogp-satouillustration.jpg">
+    <meta name="twitter:image" content="https://satouillustration.com/images/ogp/ogp-satouillustration-1200x630.jpg">
+    
+    <!-- Hero Image Preload -->
+    <link rel="preload" as="image"
+          href="images/hero/hero-bg.webp"
+          type="image/webp">
     
     <link rel="stylesheet" href="assets/css/style.css">
     
@@ -111,7 +117,12 @@
         <!-- Hero Section -->
         <section id="hero" class="hero">
             <div class="hero__background">
-                <img src="images/hero/hero-bg.jpg" alt="" class="hero__bg-image" width="1920" height="1080" loading="eager" decoding="async">
+                <picture>
+                    <source type="image/webp" srcset="images/hero/hero-bg.webp">
+                    <img src="images/hero/hero-bg.jpg" alt=""
+                         class="hero__bg-image" width="1440" height="1440"
+                         loading="eager" decoding="async">
+                </picture>
             </div>
         </section>
 
@@ -142,10 +153,14 @@
                     <!-- Work Item 1 -->
                     <article class="work-card">
                         <a href="works/index.html#work-1" class="work-card__link">
-                            <img src="images/works/work-01-thumb.jpg" alt="カフェ看板イラスト" 
-                                 class="work-card__image" width="360" height="270" loading="lazy" decoding="async">
+                            <picture>
+                                <source type="image/webp" srcset="images/works/work-01-360.webp 360w" sizes="360px">
+                                <source type="image/jpeg" srcset="images/works/work-01-360.jpg 360w" sizes="360px">
+                                <img src="images/works/work-01-360.jpg" alt="檸檬さま 1st Album 再訪の街 透明な約束 特典巾着イラスト" 
+                                     class="work-card__image" width="360" height="360" loading="lazy" decoding="async">
+                            </picture>
                             <div class="work-card__content">
-                                <h3 class="work-card__title">檸檬さま 1st Album 再訪の街 透明な約束 特典巾着イラスト（2025）</h3>
+                                <h3 class="work-card__title">檸檬 1st Album 『再訪の街 透明な約束』 特典巾着用イラスト（2025）</h3>
                             </div>
                         </a>
                     </article>
@@ -153,8 +168,12 @@
                     <!-- Work Item 2 -->
                     <article class="work-card">
                         <a href="works/index.html#work-2" class="work-card__link">
-                            <img src="images/works/work-02-thumb.jpg" alt="音楽アルバム付録イラスト" 
-                                 class="work-card__image" width="360" height="270" loading="lazy" decoding="async">
+                            <picture>
+                                <source type="image/webp" srcset="images/works/work-02-360.webp 360w" sizes="360px">
+                                <source type="image/jpeg" srcset="images/works/work-02-360.jpg 360w" sizes="360px">
+                                <img src="images/works/work-02-360.jpg" alt="左藤吹きガラス工房 メッセージカード用イラスト" 
+                                     class="work-card__image" width="360" height="360" loading="lazy" decoding="async">
+                            </picture>
                             <div class="work-card__content">
                                 <h3 class="work-card__title">左藤吹きガラス工房 メッセージカード用イラスト（2023）</h3>
                             </div>
@@ -164,8 +183,12 @@
                     <!-- Work Item 3 -->
                     <article class="work-card">
                         <a href="works/index.html#work-3" class="work-card__link">
-                            <img src="images/works/work-03-thumb.jpg" alt="ブランドアイコンセット" 
-                                 class="work-card__image" width="360" height="270" loading="lazy" decoding="async">
+                            <picture>
+                                <source type="image/webp" srcset="images/works/work-03-360.webp 360w" sizes="360px">
+                                <source type="image/jpeg" srcset="images/works/work-03-360.jpg 360w" sizes="360px">
+                                <img src="images/works/work-03-360.jpg" alt="Hanako Web連載『Noyauのムーンレター〜月とアロマのご自愛レスキュー〜』アイキャッチ用イラスト" 
+                                     class="work-card__image" width="360" height="360" loading="lazy" decoding="async">
+                            </picture>
                             <div class="work-card__content">
                                 <h3 class="work-card__title">Hanako Web連載『Noyauのムーンレター〜月とアロマのご自愛レスキュー〜』アイキャッチ用イラスト（2023）</h3>
                             </div>
