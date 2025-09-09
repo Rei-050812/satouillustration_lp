@@ -1596,10 +1596,7 @@ a:focus {
 }
 
 .modal__description {
-  font-size: 0.9rem;
-  line-height: 1.6;
-  color: var(--gray-dark);
-  margin: 0;
+  display: none;
 }
 
 /* Mobile adjustments for modal */
