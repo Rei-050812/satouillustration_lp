@@ -166,7 +166,7 @@
         modalTitle.textContent = workInfo.title;
         modalImage.src = workInfo.image;
         modalImage.alt = workInfo.title;
-        modalDescription.textContent = workInfo.description;
+        // modalDescription.textContent = workInfo.description; // 説明文を削除
 
         // Show modal
         modal.classList.add('is-open');
