@@ -1,0 +1,13 @@
+# robots.txt for satouillustration.com
+
+User-agent: *
+Allow: /
+
+# Disallow private directories
+Disallow: /contact/debug.log
+Disallow: /order/debug.log
+Disallow: /contact/check.php
+Disallow: /order/check.php
+
+# Sitemap location
+Sitemap: https://satouillustration.com/sitemap.xml
