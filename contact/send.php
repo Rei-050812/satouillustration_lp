@@ -23,7 +23,7 @@ function writeLog($message) {
     @error_log("CONTACT_FORM: $message");
 }
 
-writeLog("フォーム処理開始");
+writeLog("フォーム処理開始 - バージョン2025-10-12-v2");
 
 // 日本語メール設定
 mb_language("Japanese");
@@ -75,7 +75,7 @@ $inquiry_types = [
 $inquiry_text = isset($inquiry_types[$inquiry_type]) ? $inquiry_types[$inquiry_type] : $inquiry_type;
 
 // 管理者宛メール本文
-$admin_to = '2285satou@gmail.com';
+$admin_to = 'satoyu@satoyu-illustration.com';
 $admin_subject = '【お問い合わせ】さとうゆうillustration';
 $admin_body = "お問い合わせがありました。\n\n";
 $admin_body .= "■ お名前\n$name\n\n";
@@ -108,7 +108,7 @@ if ($hp !== '') {
 
 // メールヘッダー（管理者宛）
 $admin_headers = [
-    'From: noreply@mysterynotes.sakura.ne.jp',
+    'From: noreply@satoyu-illustration.com',
     'Reply-To: ' . $email,
     'MIME-Version: 1.0',
     'Content-Type: text/plain; charset=UTF-8',
@@ -127,7 +127,7 @@ $admin_sent = mail(
     mb_encode_mimeheader($admin_subject, 'UTF-8'),
     $admin_body,
     implode("\r\n", $admin_headers),
-    '-f noreply@mysterynotes.sakura.ne.jp'
+    '-f noreply@satoyu-illustration.com'
 );
 
 if(!$admin_sent){ 
@@ -157,7 +157,7 @@ $user_body .= "さとうゆうillustration\n";
 $user_body .= "Email: 2285satou@gmail.com\n";
 
 $user_headers = [
-    'From: noreply@mysterynotes.sakura.ne.jp',
+    'From: noreply@satoyu-illustration.com',
     'MIME-Version: 1.0',
     'Content-Type: text/plain; charset=UTF-8',
     'Content-Transfer-Encoding: 8bit',
@@ -172,7 +172,7 @@ $user_sent = mail(
     mb_encode_mimeheader($user_subject, 'UTF-8'),
     $user_body,
     implode("\r\n", $user_headers),
-    '-f noreply@mysterynotes.sakura.ne.jp'
+    '-f noreply@satoyu-illustration.com'
 );
 if(!$user_sent){ writeLog('user mail failed: '.print_r(error_get_last(), true)); }
 
@@ -189,6 +189,6 @@ if ($admin_sent && $user_sent) {
 
 // 出力バッファをクリアして、サンクスページへリダイレクト
 if (ob_get_length()) { ob_end_clean(); }
-header('Location: /satouillustration/contact/thanks.html');
+header('Location: /contact/thanks.html');
 exit;
 ?>

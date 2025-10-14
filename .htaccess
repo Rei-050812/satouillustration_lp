@@ -1,3 +1,6 @@
+# Disable PHP OPcache for development
+php_flag opcache.enable Off
+
 # URL Rewrite Rules - Remove index.html from URLs
 RewriteEngine On
 
@@ -24,10 +27,10 @@ RewriteCond %{REQUEST_URI} !^/$
 RewriteRule ^(.*)$ $1/ [R=301,L]
 
 # Security - Deny access to sensitive files
-<Files ~ "^\.">
+<FilesMatch "^\.(htaccess|htpasswd|ini|log|sh|inc|bak)$">
     Order allow,deny
     Deny from all
-</Files>
+</FilesMatch>
 
 # Prevent access to PHP files directly (optional security)
 <Files "*.php">

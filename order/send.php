@@ -23,7 +23,7 @@ function writeLog($message) {
     @error_log("ORDER_FORM: $message");
 }
 
-writeLog("制作依頼フォーム処理開始");
+writeLog("制作依頼フォーム処理開始 - バージョン2025-10-12-v2");
 
 // 日本語メール設定
 mb_language("Japanese");
@@ -101,7 +101,7 @@ if (empty($budget)) {
 }
 
 // 管理者宛メール本文
-$admin_to = '2285satou@gmail.com';
+$admin_to = 'satoyu@satoyu-illustration.com';
 $admin_subject = '【制作依頼】さとうゆうillustration';
 $admin_body = "制作依頼がありました。\n\n";
 $admin_body .= "■ お名前\n$name\n\n";
@@ -118,11 +118,11 @@ $admin_body .= "■ 送信日時\n" . date('Y年n月j日 H時i分') . "\n";
 
 // セキュリティチェック
 // ヘッダインジェクション簡易対策
-foreach ([$name, $subject, $email] as $v) {
+foreach ([$name, $email] as $v) {
     if (preg_match('/\r|\n/', $v)) {
         writeLog('header injection suspected');
         if (ob_get_length()) { ob_end_clean(); }
-        header('Location: index.html'); 
+        header('Location: index.html');
         exit;
     }
 }
@@ -138,7 +138,7 @@ if ($hp !== '') {
 
 // メールヘッダー（管理者宛）
 $admin_headers = [
-    'From: noreply@mysterynotes.sakura.ne.jp',
+    'From: noreply@satoyu-illustration.com',
     'Reply-To: ' . $email,
     'MIME-Version: 1.0',
     'Content-Type: text/plain; charset=UTF-8',
@@ -157,7 +157,7 @@ $admin_sent = mail(
     mb_encode_mimeheader($admin_subject, 'UTF-8'),
     $admin_body,
     implode("\r\n", $admin_headers),
-    '-f noreply@mysterynotes.sakura.ne.jp'
+    '-f noreply@satoyu-illustration.com'
 );
 
 if(!$admin_sent){ 
@@ -191,7 +191,7 @@ $user_body .= "さとうゆうillustration\n";
 $user_body .= "Email: 2285satou@gmail.com\n";
 
 $user_headers = [
-    'From: noreply@mysterynotes.sakura.ne.jp',
+    'From: noreply@satoyu-illustration.com',
     'MIME-Version: 1.0',
     'Content-Type: text/plain; charset=UTF-8',
     'Content-Transfer-Encoding: 8bit',
@@ -206,7 +206,7 @@ $user_sent = mail(
     mb_encode_mimeheader($user_subject, 'UTF-8'),
     $user_body,
     implode("\r\n", $user_headers),
-    '-f noreply@mysterynotes.sakura.ne.jp'
+    '-f noreply@satoyu-illustration.com'
 );
 if(!$user_sent){ writeLog('user mail failed: '.print_r(error_get_last(), true)); }
 
@@ -223,6 +223,6 @@ if ($admin_sent && $user_sent) {
 
 // 出力バッファをクリアして、サンクスページへリダイレクト
 if (ob_get_length()) { ob_end_clean(); }
-header('Location: /satouillustration/order/thanks.html');
+header('Location: /order/thanks.html');
 exit;
 ?>
