@@ -7,6 +7,9 @@ RewriteEngine On
 # Set DirectoryIndex
 DirectoryIndex index.html
 
+# Custom Error Pages
+ErrorDocument 404 /404.html
+
 # Remove index.html from URLs (redirect)
 RewriteCond %{THE_REQUEST} \s/+(.*/)?index\.html[\s?] [NC]
 RewriteRule ^(.*/)?index\.html$ /%1 [R=301,L]

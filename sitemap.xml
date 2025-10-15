@@ -1,57 +1,51 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-        xmlns:image="http://www.google.com/schemas/sitemap-image/1.1">
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
 
-    <!-- Top Page -->
-    <url>
-        <loc>https://satouillustration.com/</loc>
-        <lastmod>2025-10-14</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>1.0</priority>
-    </url>
-
-    <!-- Gallery Page -->
-    <url>
-        <loc>https://satouillustration.com/works/</loc>
-        <lastmod>2025-10-14</lastmod>
-        <changefreq>weekly</changefreq>
-        <priority>0.9</priority>
-        <image:image>
-            <image:loc>https://satouillustration.com/images/works/work-01-800.jpg</image:loc>
-            <image:title>檸檬 1st Album 『再訪の街 透明な約束』 特典巾着用イラスト</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://satouillustration.com/images/works/work-02-800.jpg</image:loc>
-            <image:title>左藤吹きガラス工房 メッセージカード用イラスト</image:title>
-        </image:image>
-        <image:image>
-            <image:loc>https://satouillustration.com/images/works/work-03-800.jpg</image:loc>
-            <image:title>Hanako Web連載『Noyauのムーンレター〜月とアロマのご自愛レスキュー〜』アイキャッチ用イラスト</image:title>
-        </image:image>
-    </url>
-
-    <!-- Order Page -->
-    <url>
-        <loc>https://satouillustration.com/order/</loc>
-        <lastmod>2025-10-14</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Contact Page -->
-    <url>
-        <loc>https://satouillustration.com/contact/</loc>
-        <lastmod>2025-10-14</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.8</priority>
-    </url>
-
-    <!-- Links/SNS Page -->
-    <url>
-        <loc>https://satouillustration.com/links/</loc>
-        <lastmod>2025-10-14</lastmod>
-        <changefreq>monthly</changefreq>
-        <priority>0.7</priority>
-    </url>
+<!--  created with free sitemap generation system www.sitemapxml.jp  --> 
+<url>
+  <loc>https://satoyu-illustration.com/</loc>
+  <priority>1.0</priority>
+  <lastmod>2025-10-15T08:20:48+09:00</lastmod>
+</url>
+<url>
+  <loc>https://satoyu-illustration.com/works/index.html</loc>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://satoyu-illustration.com/order/index.html</loc>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://satoyu-illustration.com/contact/index.html</loc>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://satoyu-illustration.com/links/index.html</loc>
+  <priority>0.8</priority>
+</url>
+<url>
+  <loc>https://satoyu-illustration.com/works/</loc>
+  <priority>0.7</priority>
+  <lastmod>2025-10-15T08:21:18+09:00</lastmod>
+</url>
+<url>
+  <loc>https://satoyu-illustration.com/order/</loc>
+  <priority>0.7</priority>
+  <lastmod>2025-10-15T08:21:22+09:00</lastmod>
+</url>
+<url>
+  <loc>https://satoyu-illustration.com/contact/</loc>
+  <priority>0.7</priority>
+  <lastmod>2025-10-15T08:21:19+09:00</lastmod>
+</url>
+<url>
+  <loc>https://satoyu-illustration.com/links/</loc>
+  <priority>0.7</priority>
+  <lastmod>2025-10-15T08:21:17+09:00</lastmod>
+</url>
+<url>
+  <loc>https://satoyu-illustration.com/index.html</loc>
+  <priority>0.6</priority>
+</url>
 
 </urlset>
